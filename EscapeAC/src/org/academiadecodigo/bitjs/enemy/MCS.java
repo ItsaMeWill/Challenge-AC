@@ -2,7 +2,7 @@ package org.academiadecodigo.bitjs.enemy;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public abstract class MCS {
+public class MCS {
 
     private String name;
     private Picture face;
