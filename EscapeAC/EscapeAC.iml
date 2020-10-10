@@ -10,11 +10,12 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../WorkSpace/Exercises/carcrashx/lib/simplegraphics.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../exercises/skeletons/car-crash-x-skeleton/lib/simplegraphics.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="simplegraphics" level="project" />
   </component>
 </module>
