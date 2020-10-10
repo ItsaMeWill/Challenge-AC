@@ -1,0 +1,47 @@
+import org.academiadecodigo.simplegraphics.graphics.*;
+import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+
+public class Playground {
+
+    public static void main(String[] args) {
+
+
+
+
+        Rectangle rectangle = new Rectangle(10,10, 500,500);
+
+        Color color = new Color(255,105,100);
+
+        rectangle.setColor(color);
+        rectangle.fill();
+
+        Picture picture = new Picture(10,10,"/resources/ac_logo.png");
+        picture.draw();
+
+        Ellipse ellipse1 = new Ellipse(300,420,100,100);
+        ellipse1.fill();
+
+        Rectangle rectangle1 = new Rectangle(150,150,200,100);
+        rectangle1.setColor(Color.DARK_GRAY);
+        rectangle1.fill();
+
+        Ellipse ellipse = new Ellipse(50,50,150,150);
+
+
+        ellipse.fill();
+//        ellipse.grow(50,50);
+
+        Line line = new Line(300,300,50,50);
+
+        line.draw();
+
+        Text text = new Text(250,200, "Falta cerveja!!!!");
+        text.draw();;
+
+
+        Graf graf = new Graf(ellipse);
+
+
+    }
+}
