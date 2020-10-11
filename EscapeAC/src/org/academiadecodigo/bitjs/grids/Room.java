@@ -13,6 +13,8 @@ public class Room implements Grid {
 
     private int PADDING = 10;
 
+
+
     //TODO setters
 
     //TODO getters
