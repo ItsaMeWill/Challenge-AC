@@ -1,10 +1,6 @@
 package org.academiadecodigo.bitjs.player;
 
-import org.academiadecodigo.bitjs.enemy.MCS;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
-import org.academiadecodigo.bitjs.rooms.RoomPosition;
-import org.academiadecodigo.simplegraphics.graphics.Movable;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -33,13 +29,26 @@ public class Game implements KeyboardHandler {
             macRoom = new MacRoom();
             player = new Player();
             movable = player.getFace();
-            //Rectangle tables = new Rectangle(140, 200,270,200);
-            //tables.fill();
-            Text text1 = new Text(200,200,"Tell me ur name");
 
-            if(player.getFace().getX()==macRoom.getRicardo().getFace().getX() || player.getFace().getY()==macRoom.getRicardo().getFace().getY()){
-                text1.draw();
+
+            Text text1 = new Text(200,200,"Tell me ur name");
+            int pX, pY, mX, mY;
+
+            pX = player.getPosition().getCol();
+            pY = player.getPosition().getRow();
+            mX = macRoom.getRicardo().getPosition().getCol();
+            mY = macRoom.getRicardo().getPosition().getRow();
+            if (player.getFace().getX() == macRoom.getRicardo().getFace().getX()){
+                System.out.println("teste");
             }
+            System.out.println(pX);
+            System.out.println(pY);
+            System.out.println(mX);
+            System.out.println(mY);
+            /*System.out.println(player.getPosition().getCol());
+            System.out.println(player.getPosition().getRow());
+            System.out.println(macRoom.getRicardo().getPosition().getRow());
+            System.out.println(macRoom.getRicardo().getPosition().getCol());*/
 
         }
 
@@ -67,15 +76,19 @@ public class Game implements KeyboardHandler {
         public void moving(KeyboardEvent keyboardEvent) {
                 if (keyboardEvent == down && movable.getY() < 435) {
                    player.moveDown();
+                    System.out.println(player.getPosition().getRow());
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
                   player.moveUp();
+                    System.out.println(player.getPosition().getRow());
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
                    player.moveRight();
+                    System.out.println(player.getPosition().getCol());
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
                     player.moveLeft();
+                    System.out.println(player.getPosition().getCol());
                 }
             }
 

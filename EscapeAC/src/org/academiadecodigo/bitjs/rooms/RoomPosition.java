@@ -9,10 +9,15 @@ public class RoomPosition {
 
     private int col;
     private int row;
+    private int width;
+    private int height;
+    private final int cellSize = 10;
 
     public RoomPosition(int col, int row) {
         this.col = col;
         this.row = row;
+        this.width = col * cellSize;
+        this.height = row * cellSize;
     }
 
     public int getCol() {

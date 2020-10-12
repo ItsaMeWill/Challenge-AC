@@ -6,13 +6,13 @@ import org.academiadecodigo.simplegraphics.pictures.*;
 
 public class MacRoom extends Room{
 
-    private MCS ricardo = new MCS(new Picture(80,80,"src/org/academiadecodigo/bitjs/resources/rsz_1player.png"),new RoomPosition(80,80));
+    private MCS ricardo = new MCS(new Picture(80,80,"src/org/academiadecodigo/bitjs/resources/rsz_1player.png"),new RoomPosition(80,80), new Rectangle(80, 80, 50, 50));
 
     public MacRoom(){
         super(50,50, new Picture(10,10,"src/org/academiadecodigo/bitjs/resources/MacRoom.png"));
         super.init();
         ricardo.getFace().draw();
-
+        ricardo.getRectangle().draw();
     }
 
     public MCS getRicardo() {
