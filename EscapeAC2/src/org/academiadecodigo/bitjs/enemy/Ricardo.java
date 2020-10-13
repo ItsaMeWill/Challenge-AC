@@ -9,9 +9,8 @@ public class Ricardo extends MCS {
 
         private Rectangle rectangle;
 
-        public Ricardo(Picture face, Rectangle rectangle){
-            this.face = face;
-            this.rectangle = rectangle;
+        public Ricardo(){
+            super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
         }
 
         public Picture getFace() {
