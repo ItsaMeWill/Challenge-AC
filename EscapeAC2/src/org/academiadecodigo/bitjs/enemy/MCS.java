@@ -11,12 +11,8 @@ abstract public class MCS {
     private Rectangle rectangle;
     private Question question;
 
-
-    // private RoomPosition position;
-
     public MCS(Picture face, Rectangle rectangle){
         this.face = face;
-        //this.position = position;
         this.rectangle = rectangle;
     }
 

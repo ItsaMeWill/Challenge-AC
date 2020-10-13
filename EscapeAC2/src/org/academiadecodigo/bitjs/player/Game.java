@@ -1,5 +1,6 @@
 package org.academiadecodigo.bitjs.player;
 
+import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
@@ -15,7 +16,8 @@ public class Game implements KeyboardHandler {
         private Player player;
         private MacRoom macRoom;
         public boolean areCollided;
-        private Picture Quiz;
+        private Picture quiz;
+        private Ricardo ricardo;
 
         KeyboardEvent left = new KeyboardEvent();
         KeyboardEvent right = new KeyboardEvent();
@@ -23,38 +25,41 @@ public class Game implements KeyboardHandler {
         KeyboardEvent up = new KeyboardEvent();
 
         public Game() {
-            macRoom = new MacRoom();
-            player = new Player();
-            movable = player.getFace();
-            moves();
+
         }
 
-        public void start(){
+        public void startLevel1(){
+            macRoom = new MacRoom();
             macRoom.getPicture().draw();
-            macRoom.getRicardo().getFace().draw();
+            player = new Player(200,200);
             player.getFace().draw();
-            macRoom.getRicardo().getRectangle().draw();
+            player.getRectangle().draw();
+            ricardo = new Ricardo();
+            ricardo.getRectangle().draw();
+            ricardo.getFace().draw();
+            movable = player.getFace();
+            moves();
 
-            player.moving();
 
             while (true){
-                player.getRectangle().draw();
-              ;
-                if (collide(player.getRectangle(),macRoom.getRicardo().getRectangle())){
+                if (collide(player.getRectangle(),ricardo.getRectangle())){
+
                     System.out.println("HSHSHSHSH");
                     return;
                 }
 
     if(player.getRectangle().getX()+player.getRectangle().getWidth() > 435 && player.getRectangle().getY()+player.getRectangle().getWidth() == 180){
         Rectangle quiz = new Rectangle(300,300,150,150);
+
         quiz.fill();
         return;
     }
 
 }
+        }
 
-
-
+        public void startLevel2(){
+            macRoom.getPicture().delete();
 
         }
 
@@ -83,25 +88,29 @@ public class Game implements KeyboardHandler {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
 
-                   player.moveDown();
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                        player.moveUp();
+                        player.moveUp();
+                    }
+                    player.moveDown();
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
-                    if (collide(player.getRectangle(),macRoom.getRicardo().getRectangle())){
-                       player.moveDown();
-                       player.moveDown();
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                        player.moveDown();
+                        player.moveDown();
                     }
-                  player.moveUp();
+                    player.moveUp();
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
-                   if (collide(player.getRectangle(),macRoom.getRicardo().getRectangle())){
-                       player.moveLeft();
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                       player.moveRight();
                         return;
                     }
-                   player.moveRight();
+                    player.moveRight();
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
 
-                    if (collide(player.getRectangle(),macRoom.getRicardo().getRectangle())){
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
                         player.moveRight();
                         return;
                     }

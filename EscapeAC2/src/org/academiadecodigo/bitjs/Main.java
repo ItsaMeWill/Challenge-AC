@@ -10,7 +10,7 @@ public class Main {
 
 
         Game game1 = new Game();
-        game1.start();
+        game1.startLevel1();
 
 
 

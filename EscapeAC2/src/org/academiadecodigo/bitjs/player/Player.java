@@ -8,20 +8,9 @@ public class Player {
     private Picture face;
     private Rectangle rectangle;
 
-
-    public Player(){
-        this.face = new Picture(200,200,"resources/rsz_1cyan.png");
-       // this.face.draw();
-       // this.position = new RoomPosition(200,200);
-        this.rectangle = new Rectangle(200, 200, 50, 50);
-       // this.rectangle.draw();
-    }
-
-    public void moving(){
-        moveDown();
-        moveLeft();
-        moveRight();
-        moveUp();
+    public Player(int x, int y){
+        this.face = new Picture(x,y,"resources/rsz_1cyan.png");
+        this.rectangle = new Rectangle(x, y, 50, 50);
     }
 
     public void moveUp(){
