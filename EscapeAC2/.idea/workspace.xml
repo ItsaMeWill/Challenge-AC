@@ -20,46 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32fe4d53-d87c-4166-9c47-17405d386325" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../CodingProjects/linked-list-skeleton/src/org/academiadecodigo/bootcamp/containers/LinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../CodingProjects/linked-list-skeleton/src/org/academiadecodigo/bootcamp/containers/LinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/lib/simplegraphics.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/game/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/grids/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/grids/RoomGrid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/Cyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/MacRoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/rsz_1cyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/rsz_1player.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/resources/rsz_cyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/BreakRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/Kitchen.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/MacRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/Room.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/RoomPosition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/SmallGrass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/EscapeAC/src/org/academiadecodigo/bitjs/rooms/VictoryRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/Jojo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/Mac Room.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/Pedro g.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/Untitled Document (2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ESCAPE AC 2.0/mari.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1iotteo3pqe4nBsQm0O15tRg1V7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -112,6 +96,8 @@
       <workItem from="1602585990037" duration="26000" />
       <workItem from="1602586040454" duration="150000" />
       <workItem from="1602615861869" duration="1132000" />
+      <workItem from="1602619126873" duration="120000" />
+      <workItem from="1602619281296" duration="568000" />
     </task>
     <servers />
   </component>
