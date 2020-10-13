@@ -1,6 +1,7 @@
 package org.academiadecodigo.bitjs;
 
-import org.academiadecodigo.bitjs.grids.MacRoom;
+import org.academiadecodigo.bitjs.player.Game;
+import org.academiadecodigo.bitjs.rooms.MacRoom;
 import org.academiadecodigo.bitjs.player.Player;
 
 public class Main {
@@ -8,9 +9,11 @@ public class Main {
     public static void main(String[] args) {
 
 
-        MacRoom macRoom = new MacRoom();
-        macRoom.init();
-        Player player = new Player();
+        Game game1 = new Game();
+        game1.start();
+
+
+
 
     }
 }
