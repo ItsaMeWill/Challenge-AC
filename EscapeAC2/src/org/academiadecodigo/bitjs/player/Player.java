@@ -6,11 +6,32 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Player {
 
     private Picture face;
+    private Picture[] beers;
     private Rectangle rectangle;
+    private int maxHealth, currentHealth;
 
     public Player(int x, int y){
         this.face = new Picture(x,y,"resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
+        this.maxHealth = 3;
+    }
+
+    public void createBeers(){
+        for (int i = 0; i < beers.length; i++){
+            beers[i] = new Picture();
+        }
+    }
+
+    public void beerToHealth(){
+        switch (currentHealth){
+            case 2: beers[2].delete();
+            case 1: beers[1].delete();
+            case 0: beers[0].delete();
+        }
+        if (currentHealth == 0){
+            //call gameover screen
+        }
+
     }
 
     public void moveUp(){
