@@ -40,6 +40,7 @@ public class Game implements KeyboardHandler {
             player = new Player(200,200);
             player.getFace().draw();
             player.getRectangle().draw();
+            player.createBeers();
             ricardo = new Ricardo();
             ricardo.getRectangle().draw();
             ricardo.getFace().draw();

@@ -6,7 +6,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Player {
 
     private Picture face;
-    private Picture[] beers;
+    private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
     private int maxHealth, currentHealth;
 
@@ -17,8 +17,11 @@ public class Player {
     }
 
     public void createBeers(){
+        beers[0] = new Picture(50,470,"resources/rsz_beer.png");
+        beers[1] = new Picture(100,470,"resources/rsz_beer.png");
+        beers[2] = new Picture(150,470,"resources/rsz_beer.png");
         for (int i = 0; i < beers.length; i++){
-            beers[i] = new Picture();
+            beers[i].draw();
         }
     }
 
