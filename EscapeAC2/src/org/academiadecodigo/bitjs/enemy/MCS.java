@@ -19,20 +19,12 @@ abstract public class MCS {
 
 
     public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3,Picture picture) {
-    //create the question screen and write the question
 
-
-
-           picture.draw();
-    Text questionMc = new Text(10, 10, question.getQuestion());
+            picture.draw();
+            Text questionMc = new Text(10, 10, question.getQuestion());
             questionMc.setColor(Color.WHITE);
             questionMc.draw();
 
-    //write the answers
-
-    //Text answer1 = new Text(100, 100, question.getAnswer1());
-    //Text answer2 = new Text(20, 120, question.getAnswer2());
-    //Text answer3 = new Text(20, 140, question.getAnswer3());
             ans1.setColor(Color.WHITE);
             ans2.setColor(Color.WHITE);
             ans3.setColor(Color.WHITE);
