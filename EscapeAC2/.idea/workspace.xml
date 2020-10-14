@@ -19,16 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32fe4d53-d87c-4166-9c47-17405d386325" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Questions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/MacRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/MacRoom.java" afterDir="false" />
-    </list>
+    <list default="true" id="32fe4d53-d87c-4166-9c47-17405d386325" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
