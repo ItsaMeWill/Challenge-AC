@@ -9,10 +9,4 @@ public class Mari extends MCS {
         super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
     }
 
-
-    @Override
-    public void makeQuestion(Question question, Question correct) {
-        super.makeQuestion(question, correct);
-    }
-
 }

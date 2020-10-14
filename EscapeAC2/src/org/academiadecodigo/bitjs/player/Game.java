@@ -1,5 +1,7 @@
 package org.academiadecodigo.bitjs.player;
 
+import org.academiadecodigo.bitjs.enemy.MCS;
+import org.academiadecodigo.bitjs.enemy.Question;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
@@ -17,12 +19,16 @@ public class Game implements KeyboardHandler {
         private MacRoom macRoom;
         public boolean areCollided;
         private Picture quiz;
+        private Question question;
         private Ricardo ricardo;
 
         KeyboardEvent left = new KeyboardEvent();
         KeyboardEvent right = new KeyboardEvent();
         KeyboardEvent down = new KeyboardEvent();
         KeyboardEvent up = new KeyboardEvent();
+        KeyboardEvent one = new KeyboardEvent();
+        KeyboardEvent two = new KeyboardEvent();
+        KeyboardEvent three = new KeyboardEvent();
 
         public Game() {
 
@@ -39,12 +45,12 @@ public class Game implements KeyboardHandler {
             ricardo.getFace().draw();
             movable = player.getFace();
             moves();
-
+           //
 
             while (true){
+                System.out.println("");
                 if (collide(player.getRectangle(),ricardo.getRectangle())){
-
-                    System.out.println("HSHSHSHSH");
+                    ricardo.makeQuestion(Question.QUESTION1);
                     return;
                 }
 
@@ -60,6 +66,23 @@ public class Game implements KeyboardHandler {
 
         public void startLevel2(){
             macRoom.getPicture().delete();
+
+        }
+
+        public void chooseAnswer(){
+            Keyboard keyboard = new Keyboard(this);
+
+            one.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+            one.setKey(KeyboardEvent.KEY_1);
+            keyboard.addEventListener(one);
+
+            two.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+            two.setKey(KeyboardEvent.KEY_2);
+            keyboard.addEventListener(two);
+
+            three.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+            three.setKey(KeyboardEvent.KEY_3);
+            keyboard.addEventListener(three);
 
         }
 
@@ -127,7 +150,6 @@ public class Game implements KeyboardHandler {
 
         @Override
         public void keyReleased(KeyboardEvent keyboardEvent) {}
-
 
 
         public boolean collide(Rectangle r1, Rectangle r2){
