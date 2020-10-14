@@ -16,10 +16,8 @@ public class Main {
 
 
         Game game1 = new Game();
-       //game1.startLevel1();
+       game1.startLevel1();
 
-Ricardo ri = new Ricardo();
-ri.makeQuestion(Question.QUESTION1);
 
 
 

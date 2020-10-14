@@ -18,12 +18,12 @@ abstract public class MCS {
     }
 
 
-    public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3) {
+    public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3,Picture picture) {
     //create the question screen and write the question
 
-    Rectangle questionScreen = new Rectangle(10, 10, 500, 500);
-            questionScreen.setColor(Color.BLUE);
-            questionScreen.fill();
+
+
+           picture.draw();
     Text questionMc = new Text(10, 10, question.getQuestion());
             questionMc.setColor(Color.WHITE);
             questionMc.draw();

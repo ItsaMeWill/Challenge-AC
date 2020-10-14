@@ -45,18 +45,13 @@ public class Game implements KeyboardHandler {
             ricardo.getFace().draw();
             movable = player.getFace();
             moves();
-            ricardo.makeQuestion(Question.QUESTION1);
+           //
 
             while (true){
-
-
-
-
+                System.out.println("");
                 if (collide(player.getRectangle(),ricardo.getRectangle())){
-
-
-
-
+                    ricardo.makeQuestion(Question.QUESTION1);
+                    System.out.println("mamama");
                     return;
                 }
 

@@ -9,7 +9,7 @@ public class Ricardo extends MCS {
 
     private Question question;
     private String correctAnswer;
-    private Question questions;
+
     private Rectangle rectangle;
 
         public Ricardo(){
@@ -22,7 +22,8 @@ public class Ricardo extends MCS {
 
 
     public void makeQuestion(Question question) {
-        super.makeQuestion(question,new Text(100, 100, question.getAnswer1()),new Text(100, 200, question.getAnswer2()),new Text(100, 300, question.getAnswer1()));
+        super.makeQuestion(question,new Text(100, 100, question.getAnswer1()),
+                new Text(100, 200, question.getAnswer2()),new Text(100, 300, question.getAnswer1()),new Picture(10,10,"resources/9teenbattle.png"));
     }
 
     public Question getQuestion() {
