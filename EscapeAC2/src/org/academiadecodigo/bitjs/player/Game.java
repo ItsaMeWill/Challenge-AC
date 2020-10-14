@@ -111,7 +111,6 @@ public class Game implements KeyboardHandler {
         public void moving(KeyboardEvent keyboardEvent) {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
-
                     if (collide(player.getRectangle(),ricardo.getRectangle())){
                         player.moveUp();
                         player.moveUp();

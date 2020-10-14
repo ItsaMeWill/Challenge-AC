@@ -5,6 +5,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player {
 
+    private boolean hasKey;
+    private Picture key;
     private Picture face;
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
@@ -14,23 +16,34 @@ public class Player {
         this.face = new Picture(x,y,"resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
         this.maxHealth = 3;
+        this.currentHealth = this.maxHealth;
     }
 
     public void createBeers(){
-        beers[0] = new Picture(50,470,"resources/rsz_beer.png");
-        beers[1] = new Picture(100,470,"resources/rsz_beer.png");
-        beers[2] = new Picture(150,470,"resources/rsz_beer.png");
+        beers[0] = new Picture(40,460,"resources/Beer.png");
+        beers[1] = new Picture(90,460,"resources/Beer.png");
+        beers[2] = new Picture(140,460,"resources/Beer.png");
         for (int i = 0; i < beers.length; i++){
             beers[i].draw();
         }
     }
 
+    public void lostKey(){
+        this.hasKey = false;
+        this.key.delete();
+    }
+
+    public void hasKey(){
+        this.hasKey = true;
+        this.key = new Picture(440,440, "resources/Key.png");
+        this.key.draw();
+    }
+
     public void beerToHealth(){
-        switch (currentHealth){
-            case 2: beers[2].delete();
-            case 1: beers[1].delete();
-            case 0: beers[0].delete();
-        }
+        this.currentHealth--;
+        if (currentHealth == 2) beers[2].delete();
+        if (currentHealth == 1) beers[1].delete();
+        if (currentHealth == 0) beers[0].delete();
         if (currentHealth == 0){
             //call gameover screen
         }
@@ -60,7 +73,6 @@ public class Player {
         this.rectangle.translate(-10,0);
        // this.position.setCol(position.getCol() - 10);
     }
-
 
     public Picture getFace(){
         return this.face;
