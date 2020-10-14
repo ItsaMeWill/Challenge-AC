@@ -9,6 +9,7 @@ abstract public class MCS {
 
     private Picture face;
     private Rectangle rectangle;
+    private Picture picture;
 
 
     public MCS(Picture face, Rectangle rectangle){
@@ -19,7 +20,7 @@ abstract public class MCS {
 
 
     public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3,Picture picture) {
-
+            this.picture = picture;
             picture.draw();
             Text questionMc = new Text(10, 10, question.getQuestion());
             questionMc.setColor(Color.WHITE);
@@ -45,6 +46,8 @@ abstract public class MCS {
     public Rectangle getRectangle() {
         return rectangle;
     }
+
+
 
 
 }

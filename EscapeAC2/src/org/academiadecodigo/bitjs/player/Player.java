@@ -9,6 +9,8 @@ public class Player {
     private Picture[] beers;
     private Rectangle rectangle;
     private int maxHealth, currentHealth;
+    private boolean isAborded;
+
 
     public Player(int x, int y){
         this.face = new Picture(x,y,"resources/rsz_1cyan.png");
@@ -17,8 +19,9 @@ public class Player {
     }
 
     public void createBeers(){
+
         for (int i = 0; i < beers.length; i++){
-            beers[i] = new Picture();
+            beers[i].draw();
         }
     }
 
@@ -68,6 +71,13 @@ public class Player {
     }
 
 
+    public void setAborded(boolean aborded) {
+        isAborded = aborded;
+    }
+
+    public boolean isAborded() {
+        return isAborded;
+    }
 
     public int answerQuestion(){
         return 0;
