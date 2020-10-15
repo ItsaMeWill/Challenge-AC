@@ -76,16 +76,16 @@ public class Game implements KeyboardHandler {
     public void startLevel2() {
         Rectangle newRoom = new Rectangle(10, 10, 500, 500);
         newRoom.fill();
-        player.getRectangle().translate(-250,-100);
+        player.getRectangle().translate(-250, -100);
         player.getRectangle().draw();
         player.refresh();
-        player.getFace().translate(-250,-100);
+        player.getFace().translate(-250, -100);
         mari = new Mari();
         mari.getFace().draw();
-
-
-
     }
+
+
+
 
     public void chooseAnswer() {
         Keyboard keyboard = new Keyboard(this);
@@ -125,40 +125,45 @@ public class Game implements KeyboardHandler {
 
     }
 
-    public void moving(KeyboardEvent keyboardEvent) {
 
-        if (keyboardEvent == down && movable.getY() < 435) {
 
-            if (collide(player.getRectangle(), ricardo.getRectangle())) {
-                player.moveUp();
-                player.moveUp();
-            }
-            player.moveDown();
-        }
-        if (keyboardEvent == up && movable.getY() > 30) {
-            if (collide(player.getRectangle(), ricardo.getRectangle())) {
-                player.moveDown();
-                player.moveDown();
-            }
-            player.moveUp();
-        }
-        if (keyboardEvent == right && movable.getX() < 435) {
-            if (collide(player.getRectangle(), ricardo.getRectangle())) {
-                player.moveRight();
-                return;
-            }
-            player.moveRight();
-        }
-        if (keyboardEvent == left && movable.getX() > 30) {
+        public void moving(KeyboardEvent keyboardEvent) {
 
-            if (collide(player.getRectangle(), ricardo.getRectangle())) {
-                player.moveRight();
-                return;
-            }
-            player.moveLeft();
-        }
+                if (keyboardEvent == down && movable.getY() < 435) {
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                        player.moveUp();
+                        player.moveUp();
+                    }
+                    player.moveDown();
+                }
+                if (keyboardEvent == up && movable.getY() > 30) {
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                        player.moveDown();
+                        player.moveDown();
+                    }
+                    player.moveUp();
+                }
+                if (keyboardEvent == right && movable.getX() < 435) {
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                       player.moveRight();
+                        return;
+                    }
+                    player.moveRight();
+                }
+                if (keyboardEvent == left && movable.getX() > 30){
 
-    }
+                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                        player.moveRight();
+                        return;
+                    }
+                    player.moveLeft();
+                }
+
+
+            }
+
+
+
 
 
     @Override
