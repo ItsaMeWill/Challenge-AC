@@ -24,6 +24,7 @@ public class Game implements KeyboardHandler {
     private Ricardo ricardo;
     private Mari mari;
     private int currentMove;
+    private String currentAnswer;
 
     private KeyboardEvent left = new KeyboardEvent();
     private KeyboardEvent right = new KeyboardEvent();
@@ -85,9 +86,30 @@ public class Game implements KeyboardHandler {
     }
 
 
+    public void selectedAnswers(KeyboardEvent keyboardEvent) {
+
+        if (keyboardEvent == one) {
+            System.out.println("kerelkfer");
+            this.currentAnswer = Question.QUESTION1.getAnswer1();
+
+        }
+
+        if (keyboardEvent == two) {
+            System.out.println("knewefl");
+            this.currentAnswer = Question.QUESTION1.getAnswer2();
+
+        }
+
+        if (keyboardEvent == three) {
+
+            this.currentAnswer = Question.QUESTION1.getAnswer3();
+
+        }
+    }
 
 
-    public void chooseAnswer() {
+    public void moves() {
+
         Keyboard keyboard = new Keyboard(this);
 
         one.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
@@ -101,12 +123,6 @@ public class Game implements KeyboardHandler {
         three.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         three.setKey(KeyboardEvent.KEY_3);
         keyboard.addEventListener(three);
-
-    }
-
-    public void moves() {
-        Keyboard keyboard = new Keyboard(this);
-
         down.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         down.setKey(KeyboardEvent.KEY_DOWN);
         keyboard.addEventListener(down);
@@ -127,7 +143,7 @@ public class Game implements KeyboardHandler {
 
 
 
-        public void moving(KeyboardEvent keyboardEvent) {
+    public void moving(KeyboardEvent keyboardEvent) {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
                     if (collide(player.getRectangle(),ricardo.getRectangle())){
@@ -161,10 +177,6 @@ public class Game implements KeyboardHandler {
 
 
             }
-
-
-
-
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
@@ -202,5 +214,21 @@ public class Game implements KeyboardHandler {
         return true;
     }
 
+    public void verifyAnswer(String currentAnswer){
+        System.out.println("pppp");
 
+        if (currentAnswer == ricardo.getCorrectAnswer()){
+            System.out.println("certo");
+            player.hasKey();
+            ricardo.getQuizScreen().delete();
+            return;
+
+        } if (!(currentAnswer == ricardo.getCorrectAnswer()) && currentAnswer != null) {
+            System.out.println("errado");
+            player.lostKey();
+            player.beerToHealth();
+            return;
+
+        }
+    }
 }

@@ -79,8 +79,6 @@ public class Player {
         this.rectangle.translate(-10, 0);
     }
 
-
-
         public void refresh(){
          face.delete();
          face.draw();
