@@ -17,6 +17,7 @@ public class Main {
 
         Game game1 = new Game();
        game1.startLevel1();
+       game1.startLevel2();
 
 
 

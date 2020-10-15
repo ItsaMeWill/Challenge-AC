@@ -1,6 +1,7 @@
 package org.academiadecodigo.bitjs.player;
 
 import org.academiadecodigo.bitjs.enemy.MCS;
+import org.academiadecodigo.bitjs.enemy.Mari;
 import org.academiadecodigo.bitjs.enemy.Question;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
@@ -21,14 +22,16 @@ public class Game implements KeyboardHandler {
     private Picture quiz;
     private Question question;
     private Ricardo ricardo;
+    private Mari mari;
+    private int currentMove;
 
-    KeyboardEvent left = new KeyboardEvent();
-    KeyboardEvent right = new KeyboardEvent();
-    KeyboardEvent down = new KeyboardEvent();
-    KeyboardEvent up = new KeyboardEvent();
-    KeyboardEvent one = new KeyboardEvent();
-    KeyboardEvent two = new KeyboardEvent();
-    KeyboardEvent three = new KeyboardEvent();
+    private KeyboardEvent left = new KeyboardEvent();
+    private KeyboardEvent right = new KeyboardEvent();
+    private KeyboardEvent down = new KeyboardEvent();
+    private KeyboardEvent up = new KeyboardEvent();
+    private KeyboardEvent one = new KeyboardEvent();
+    private KeyboardEvent two = new KeyboardEvent();
+    private KeyboardEvent three = new KeyboardEvent();
 
     public Game() {
 
@@ -44,31 +47,43 @@ public class Game implements KeyboardHandler {
         ricardo.getRectangle().draw();
         ricardo.getFace().draw();
         movable = player.getFace();
+        new Rectangle(155,200,230,270).draw();
         moves();
         //
 
-        while (!player.isAborded()) {
+        while (true) {
             System.out.println("");
             System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
                 ricardo.makeQuestion(Question.QUESTION1);
-                player.setAborded(true);
+                ricardo.getQuizScreen();
+                ricardo.getQuizScreen().delete();
 
-                return;
+
+                break;
             }
-
-            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490){ //&& player.getRectangle().getY() + player.getRectangle().getWidth() == 180) {
-                Rectangle quiz = new Rectangle(300, 300, 150, 150);
-
-                quiz.fill();
-                return;
-            }
-
         }
+       while (true) {
+            System.out.println("");
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490) {
+                ricardo.getRectangle().delete();
+                break;
+            }
+        }
+       return;
     }
 
     public void startLevel2() {
-        macRoom.getPicture().delete();
+        Rectangle newRoom = new Rectangle(10, 10, 500, 500);
+        newRoom.fill();
+        player.getRectangle().translate(-250,-100);
+        player.getRectangle().draw();
+        player.refresh();
+        player.getFace().translate(-250,-100);
+        mari = new Mari();
+        mari.getFace().draw();
+
+
 
     }
 
@@ -157,9 +172,28 @@ public class Game implements KeyboardHandler {
 
 
     public boolean collide(Rectangle r1, Rectangle r2) {
-        if (r1.getX() > r2.getX() + r2.getWidth() || r1.getX() + r1.getWidth() < r2.getX() || r1.getY() > r2.getY() + r2.getHeight() || r1.getY() + r1.getHeight() < r2.getY()) {
+
+        if (r1.getX() > r2.getX() + r2.getWidth() || r1.getX() + r1.getWidth() < r2.getX() ||
+                r1.getY() > r2.getY() + r2.getHeight() || r1.getY() + r1.getHeight() < r2.getY()) {
             return false;
         }
+
+        switch (currentMove){
+            case 38:
+                player.moveDown();
+                player.moveDown();
+            case 40:
+                player.moveUp();
+                player.moveUp();
+            case 39:
+                player.moveLeft();
+                player.moveLeft();
+            case 37:
+                player.moveRight();
+                player.moveRight();
+        }
+
+
         return true;
     }
 

@@ -21,6 +21,7 @@
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" afterDir="false" />
@@ -54,7 +55,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -81,7 +85,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="32fe4d53-d87c-4166-9c47-17405d386325" name="Default Changelist" comment="" />
+      <changelist id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="" />
       <created>1602585988782</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -97,6 +101,8 @@
       <workItem from="1602701655547" duration="1370000" />
       <workItem from="1602703592528" duration="174000" />
       <workItem from="1602703792473" duration="60000" />
+      <workItem from="1602787297881" duration="39000" />
+      <workItem from="1602787342035" duration="7270000" />
     </task>
     <servers />
   </component>
@@ -125,26 +131,26 @@
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state x="738" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/80.23.1840.1057@80.23.1840.1057" timestamp="1602616339488" />
-    <state width="1798" height="290" key="GridCell.Tab.0.bottom" timestamp="1602707643515">
+    <state width="1798" height="290" key="GridCell.Tab.0.bottom" timestamp="1602795844294">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1602703851889" />
-    <state width="1798" height="290" key="GridCell.Tab.0.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1602707643515" />
-    <state width="1798" height="290" key="GridCell.Tab.0.center" timestamp="1602707643514">
+    <state width="1798" height="290" key="GridCell.Tab.0.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1602795844294" />
+    <state width="1798" height="290" key="GridCell.Tab.0.center" timestamp="1602795844293">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1602703851889" />
-    <state width="1798" height="290" key="GridCell.Tab.0.center/80.23.1840.1057@80.23.1840.1057" timestamp="1602707643514" />
-    <state width="1798" height="290" key="GridCell.Tab.0.left" timestamp="1602707643514">
+    <state width="1798" height="290" key="GridCell.Tab.0.center/80.23.1840.1057@80.23.1840.1057" timestamp="1602795844293" />
+    <state width="1798" height="290" key="GridCell.Tab.0.left" timestamp="1602795844293">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1602703851888" />
-    <state width="1798" height="290" key="GridCell.Tab.0.left/80.23.1840.1057@80.23.1840.1057" timestamp="1602707643514" />
-    <state width="1798" height="290" key="GridCell.Tab.0.right" timestamp="1602707643515">
+    <state width="1798" height="290" key="GridCell.Tab.0.left/80.23.1840.1057@80.23.1840.1057" timestamp="1602795844293" />
+    <state width="1798" height="290" key="GridCell.Tab.0.right" timestamp="1602795844293">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602703851889" />
-    <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1602707643515" />
+    <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1602795844293" />
     <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1602624978951">
       <screen x="0" y="23" width="1920" height="977" />
     </state>

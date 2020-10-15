@@ -12,77 +12,86 @@ public class Player {
     private boolean isAborded;
 
 
-    public Player(int x, int y){
-        this.face = new Picture(x,y,"resources/rsz_1cyan.png");
+    public Player(int x, int y) {
+        this.face = new Picture(x, y, "resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
         this.maxHealth = 3;
     }
 
-    public void createBeers(){
+    public void createBeers() {
 
-        for (int i = 0; i < beers.length; i++){
+        for (int i = 0; i < beers.length; i++) {
             beers[i].draw();
         }
     }
 
-    public void beerToHealth(){
-        switch (currentHealth){
-            case 2: beers[2].delete();
-            case 1: beers[1].delete();
-            case 0: beers[0].delete();
+    public void beerToHealth() {
+        switch (currentHealth) {
+            case 2:
+                beers[2].delete();
+            case 1:
+                beers[1].delete();
+            case 0:
+                beers[0].delete();
         }
-        if (currentHealth == 0){
+        if (currentHealth == 0) {
             //call gameover screen
         }
 
     }
 
-    public void moveUp(){
+    public void moveUp() {
 
-        this.face.translate(0,-10);
-        this.rectangle.translate(0,-10);
-       // this.position.setRow(position.getRow() -10);
-    }
-    public void moveDown(){
-       this.face.translate(0,10);
-        this.rectangle.translate(0,10);
-       // this.position.setRow(position.getRow() + 10);
+        this.face.translate(0, -10);
+        this.rectangle.translate(0, -10);
+        // this.position.setRow(position.getRow() -10);
     }
 
-    public void moveRight(){
-        this.face.translate(10,0);
-        this.rectangle.translate(10,0);
-       // this.position.setCol(position.getCol() + 10);
+    public void moveDown() {
+        this.face.translate(0, 10);
+        this.rectangle.translate(0, 10);
+
     }
 
-    public void moveLeft(){
-        this.face.translate(-10,0);
-        this.rectangle.translate(-10,0);
-       // this.position.setCol(position.getCol() - 10);
+    public void moveRight() {
+        this.face.translate(10, 0);
+        this.rectangle.translate(10, 0);
+    }
+
+        public void moveLeft () {
+            this.face.translate(-10, 0);
+            this.rectangle.translate(-10, 0);
+
+        }
+
+        public void refresh(){
+         face.delete();
+         face.draw();
+        }
+
+        public Picture getFace () {
+            return this.face;
+        }
+
+        public Rectangle getRectangle () {
+            return rectangle;
+        }
+
+
+        public void setAborded ( boolean aborded){
+            isAborded = aborded;
+        }
+
+        public boolean isAborded () {
+            return isAborded;
+        }
+
+        public int answerQuestion () {
+            return 0;
+        }
+
+
     }
 
 
-    public Picture getFace(){
-        return this.face;
-    }
 
-    public Rectangle getRectangle() {
-        return rectangle;
-    }
-
-
-    public void setAborded(boolean aborded) {
-        isAborded = aborded;
-    }
-
-    public boolean isAborded() {
-        return isAborded;
-    }
-
-    public int answerQuestion(){
-        return 0;
-    }
-
-
-
-}
