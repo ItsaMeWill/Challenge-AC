@@ -187,15 +187,19 @@ public class Game implements KeyboardHandler {
             case 38:
                 player.moveDown();
                 player.moveDown();
+                break;
             case 40:
                 player.moveUp();
                 player.moveUp();
+                break;
             case 39:
                 player.moveLeft();
                 player.moveLeft();
+                break;
             case 37:
                 player.moveRight();
                 player.moveRight();
+                break;
         }
 
 
