@@ -85,7 +85,6 @@ public class Game implements KeyboardHandler {
         mari.getFace().draw();
     }
 
-
     public void selectedAnswers(KeyboardEvent keyboardEvent) {
 
         if (keyboardEvent == one) {
@@ -106,7 +105,6 @@ public class Game implements KeyboardHandler {
 
         }
     }
-
 
     public void moves() {
 
@@ -140,8 +138,6 @@ public class Game implements KeyboardHandler {
         keyboard.addEventListener(left);
 
     }
-
-
 
     public void moving(KeyboardEvent keyboardEvent) {
 
