@@ -21,8 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +97,10 @@
       <workItem from="1602701655547" duration="1370000" />
       <workItem from="1602703592528" duration="174000" />
       <workItem from="1602703792473" duration="60000" />
-
-
       <workItem from="1602703857319" duration="687000" />
       <workItem from="1602705490139" duration="167000" />
       <workItem from="1602705688650" duration="1646000" />
-
-
+      <workItem from="1602863920515" duration="72000" />
     </task>
     <servers />
   </component>
@@ -134,8 +129,6 @@
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state x="738" y="305" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/80.23.1840.1057@80.23.1840.1057" timestamp="1602616339488" />
-
-
     <state width="1878" height="264" key="GridCell.Tab.0.bottom" timestamp="1602707413067">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -156,7 +149,6 @@
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1602707413067" />
     <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1602616997745" />
-
     <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1602624978951">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
@@ -177,5 +169,9 @@
       <screen x="0" y="23" width="1920" height="977" />
     </state>
     <state x="461" y="150" key="SettingsEditor/0.23.1920.977@0.23.1920.977" timestamp="1602621439159" />
+    <state x="332" y="174" key="new project wizard" timestamp="1602862691707">
+      <screen x="80" y="23" width="1840" height="1057" />
+    </state>
+    <state x="332" y="174" key="new project wizard/80.23.1840.1057@80.23.1840.1057" timestamp="1602862691707" />
   </component>
 </project>
