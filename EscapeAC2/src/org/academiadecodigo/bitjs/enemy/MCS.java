@@ -24,9 +24,6 @@ abstract public class MCS {
             this.quizScreen = quizScreen;
             quizScreen.draw();
 
-
-
-
 }
 
         public Picture getQuizScreen(){

@@ -96,6 +96,11 @@ public class Player {
             return rectangle;
         }
 
+        public void translate(int x, int y){
+        rectangle.translate(x,y);
+        face.translate(x,y);
+        }
+
     public int getCurrentHealth() {
         return currentHealth;
     }

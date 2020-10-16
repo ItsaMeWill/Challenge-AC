@@ -21,8 +21,9 @@ public class Game implements KeyboardHandler {
     private Ricardo ricardo;
     private Mari mari;
     private int currentMove;
-    private String currentAnswer;
+    private int currentAnswer = 10;
     private int currentRoom;
+    private Rectangle tables;
 
     private KeyboardEvent left = new KeyboardEvent();
     private KeyboardEvent right = new KeyboardEvent();
@@ -47,32 +48,40 @@ public class Game implements KeyboardHandler {
         ricardo.getRectangle().draw();
         ricardo.getFace().draw();
         movable = player.getFace();
-        new Rectangle(155,200,230,270).draw();
+        tables = new Rectangle(155,200,230,270);
+        tables.draw();
         moves();
         //
 
         while (true) {
 
             System.out.println("");
-            System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
+
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
                 ricardo.makeQuestion(Question.QUESTION1);
                 ricardo.getQuizScreen();
 
                 while (currentAnswer != ricardo.getCorrectAnswer()){
-                    verifyAnswer(currentAnswer);
-                    if(currentAnswer == ricardo.getCorrectAnswer() ){
-                        player.hasKey();
-                        break;
-                    } else {
-                       player.beerToHealth();
+                    System.out.println("");
+                    //verifyAnswer(currentAnswer);
 
+                   switch (currentAnswer){
+                        case 1:
+                            player.beerToHealth();
+                            currentAnswer = 0;
+                            break;
+                        case 2:
+                            player.hasKey();
+                            ricardo.getQuizScreen().delete();
+                            break;
+                        case 3:
+                            player.beerToHealth();
+                            currentAnswer = 0;
+                            break;
                     }
-                }
-                ricardo.getQuizScreen().delete();
 
-
-
+               }
+                //ricardo.getQuizScreen().delete();
                 break;
             }
         }
@@ -101,19 +110,19 @@ public class Game implements KeyboardHandler {
 
         if (keyboardEvent == one) {
             System.out.println("kerelkfer");
-            this.currentAnswer = Question.QUESTION1.getAnswer1();
+            this.currentAnswer = 1;
 
         }
 
         if (keyboardEvent == two) {
             System.out.println("knewefl");
-            this.currentAnswer = Question.QUESTION1.getAnswer2();
+            this.currentAnswer = 2;
 
         }
 
         if (keyboardEvent == three) {
 
-            this.currentAnswer = Question.QUESTION1.getAnswer3();
+            this.currentAnswer = 3;
 
         }
     }
@@ -154,31 +163,36 @@ public class Game implements KeyboardHandler {
     public void moving(KeyboardEvent keyboardEvent) {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
-                     if(collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveUp();
-                        player.moveUp();
+                     if(collide(player.getRectangle(), ricardo.getRectangle())){
+                      player.moveDown();
+                      return;
+
                     }
                     player.moveDown();
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveDown();
-                        player.moveDown();
+                    if (collide(player.getRectangle(), ricardo.getRectangle())){
+                      player.moveDown();
+                      return;
                     }
                     player.moveUp();
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                       player.moveRight();
-                        return;
+                    if (collide(player.getRectangle(), ricardo.getRectangle())){
+                       player.moveLeft();
+                       player.moveLeft();
+                       return;
+
                     }
                     player.moveRight();
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
 
-                   if (collide(player.getRectangle(),ricardo.getRectangle())) {
+                   if (collide(player.getRectangle(), ricardo.getRectangle())) {
+                       player.moveRight();
                        player.moveRight();
                        return;
+
                    }
                     player.moveLeft();
                 }
@@ -204,7 +218,7 @@ public class Game implements KeyboardHandler {
             return false;
         }
 
-        switch (currentMove){
+       /* switch (currentMove){
             case 38:
                 player.moveDown();
                 player.moveDown();
@@ -221,29 +235,41 @@ public class Game implements KeyboardHandler {
                 player.moveRight();
                 player.moveRight();
                 break;
-        }
+        }*/
 
 
         return true;
     }
 
-    public void verifyAnswer(String currentAnswer){
+    public void verifyAnswer(int currentAnswer){
         System.out.println("pppp");
 
-        if (currentAnswer == ricardo.getCorrectAnswer()){
-            System.out.println("certo");
+        switch (currentAnswer){
+            case 1:
+                player.beerToHealth();
+                currentAnswer = 0;
+                break;
+            case 2:
+                player.hasKey();
+                ricardo.getQuizScreen().delete();
+                break;
+            case 3:
+                player.beerToHealth();
+                currentAnswer = 0;
+                break;
 
-            player.hasKey();
+        /*if (currentAnswer == ricardo.getCorrectAnswer()){
+            System.out.println("certo");
             ricardo.getQuizScreen().delete();
             return;
 
         }
-        if (!(currentAnswer == ricardo.getCorrectAnswer()) && currentAnswer != null) {
+        if (currentAnswer == 0 || currentAnswer == 2) {
             System.out.println("errado");
-            player.beerToHealth();
+
 
             return;
-
+*/
         }
     }
 }
