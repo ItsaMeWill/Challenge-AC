@@ -52,6 +52,7 @@ public class Game implements KeyboardHandler {
         //
 
         while (true) {
+
             System.out.println("");
             System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
@@ -130,7 +131,7 @@ public class Game implements KeyboardHandler {
         public void moving(KeyboardEvent keyboardEvent) {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
+                     if(collide(player.getRectangle(),ricardo.getRectangle())){
                         player.moveUp();
                         player.moveUp();
                     }
@@ -152,10 +153,10 @@ public class Game implements KeyboardHandler {
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
 
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveRight();
-                        return;
-                    }
+                   if (collide(player.getRectangle(),ricardo.getRectangle())) {
+                       player.moveRight();
+                       return;
+                   }
                     player.moveLeft();
                 }
 
@@ -169,6 +170,9 @@ public class Game implements KeyboardHandler {
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         moving(keyboardEvent);
+        if(keyboardEvent.getKey()==49){
+            System.out.println("8888");
+        }
     }
 
     @Override
