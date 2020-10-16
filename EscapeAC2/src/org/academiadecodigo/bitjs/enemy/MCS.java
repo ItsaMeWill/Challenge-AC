@@ -23,18 +23,9 @@ abstract public class MCS {
     public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3,Picture quizScreen) {
             this.quizScreen = quizScreen;
             quizScreen.draw();
-            Text questionMc = new Text(10, 10, question.getQuestion());
-            questionMc.setColor(Color.WHITE);
-            questionMc.draw();
 
-            ans1.setColor(Color.WHITE);
-            ans2.setColor(Color.WHITE);
-            ans3.setColor(Color.WHITE);
-            ans1.grow(10,10);
 
-            ans1.draw();
-            ans2.draw();
-            ans3.draw();
+
 
 }
 
