@@ -21,6 +21,7 @@ public class Game implements KeyboardHandler {
 
     public boolean menu;
     public boolean areCollided;
+    public Picture intro;
     private Picture movable;
     private Player player;
     private MacRoom macRoom;
@@ -70,7 +71,7 @@ public class Game implements KeyboardHandler {
     public void startLevel1() {
 
         while (menu) {
-           Picture intro = new Picture(10, 10, "resources/Intro.png");
+          intro = new Picture(10, 10, "resources/Intro.png");
             intro.draw();
 
         }
@@ -264,6 +265,8 @@ public class Game implements KeyboardHandler {
             if (collide(player.getRectangle(), pedroG.getRectangle())) {
                 pedroG.makeQuestion();
                 pedroG.getQuizScreen();
+                soundtrack.stop();
+                pedroVoice.play(true);
 
                 while (currentAnswer != pedroG.getCorrectAnswer()) {
                     System.out.println("");
@@ -299,6 +302,8 @@ public class Game implements KeyboardHandler {
                 break;
             }
         }
+
+        soundtrack.play(true);
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 &&
@@ -334,6 +339,8 @@ public class Game implements KeyboardHandler {
             if (collide(player.getRectangle(), jojo.getRectangle())) {
                 jojo.makeQuestion();
                 jojo.getQuizScreen();
+                soundtrack.stop();
+                jojoVoice.play(true);
 
                 while (currentAnswer != jojo.getCorrectAnswer()) {
                     System.out.println("");
@@ -369,7 +376,7 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }
+        } soundtrack.play(true);
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 200) {
