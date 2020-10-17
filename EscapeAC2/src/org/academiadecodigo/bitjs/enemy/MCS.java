@@ -19,11 +19,10 @@ abstract public class MCS {
 
 
     public void makeQuestion(Picture quizScreen) {
+            this.quizScreen = quizScreen;
+            quizScreen.draw();
 
-        this.quizScreen = quizScreen;
-        quizScreen.draw();
-
-    }
+}
 
     public Picture getQuizScreen() {
         return this.quizScreen;

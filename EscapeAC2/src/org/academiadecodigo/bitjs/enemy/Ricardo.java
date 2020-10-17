@@ -7,15 +7,19 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Ricardo extends MCS {
 
     private Question question;
-    private String correctAnswer;
+    private int correctAnswer;
 
 
-    public Ricardo() {
-        super(new Picture(80, 80, "resources/rsz_1player.png"),
-                new Rectangle(80, 80, 50, 50));
+    private Rectangle rectangle;
+
+        public Ricardo(){
+            super(new Picture(150,80, "resources/rsz_1player.png"),
+                    new Rectangle(150,80,50,50));
+
         this.question = Question.QUESTION1;
-        this.correctAnswer = Question.QUESTION1.getAnswer2();
-    }
+        this.correctAnswer = 2;
+        }
+
 
 
     public void makeQuestion(Question question) {
@@ -26,8 +30,8 @@ public class Ricardo extends MCS {
         return question;
     }
 
-    public String getCorrectAnswer() {
-        return correctAnswer;
+    public int getCorrectAnswer() {
+        return 2;
     }
 }
 

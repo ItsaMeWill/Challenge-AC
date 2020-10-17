@@ -5,8 +5,10 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Mari extends MCS {
 
+
     private Question question;
     private String correctAnswer;
+    private Picture face;
 
 
     public Mari() {
@@ -14,10 +16,11 @@ public class Mari extends MCS {
         this.question = Question.QUESTION4;
         this.correctAnswer = Question.QUESTION4.getAnswer1();
 
+
     }
 
-    public void makeQuestion(Question question) {
-        super.makeQuestion(new Picture(10, 10, "resources/9teenbattle.png"));
+    public void makeQuestion() {
+        super.makeQuestion(new Picture(10, 10,"maribattle_txt.png" ));
     }
 }
 
