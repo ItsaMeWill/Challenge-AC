@@ -24,6 +24,7 @@ public class Game implements KeyboardHandler {
     private int currentAnswer = 10;
     private int currentRoom;
     private Rectangle tables;
+    private Rectangle[] macRoomObstacles = new Rectangle[2];
 
     private KeyboardEvent left = new KeyboardEvent();
     private KeyboardEvent right = new KeyboardEvent();
@@ -40,7 +41,7 @@ public class Game implements KeyboardHandler {
     public void startLevel1() {
         macRoom = new MacRoom();
         macRoom.getPicture().draw();
-        player = new Player(200, 200);
+        player = new Player(460, 400);
         player.getFace().draw();
         player.getRectangle().draw();
         player.createBeers();
@@ -50,6 +51,8 @@ public class Game implements KeyboardHandler {
         movable = player.getFace();
         tables = new Rectangle(155,200,230,270);
         tables.draw();
+        macRoomObstacles[0] = ricardo.getRectangle();
+        macRoomObstacles[1] = tables;
 
         //
 
@@ -162,39 +165,62 @@ public class Game implements KeyboardHandler {
 
     public void moving(KeyboardEvent keyboardEvent) {
 
+        for (int i = 0; i < macRoomObstacles.length; i++) {
+            if(collide(player.getRectangle(), macRoomObstacles[i])){
+                switch (currentMove){
+                    case 0:
+                        player.moveUp();
+                        break;
+                    case 1:
+                        player.moveDown();
+                        break;
+                    case 2:
+                        player.moveLeft();
+                        break;
+                    case 3:
+                        player.moveRight();
+                        break;
+                }
+            }
+        }
+
                 if (keyboardEvent == down && movable.getY() < 435) {
-                     if(collide(player.getRectangle(), ricardo.getRectangle())){
+                    /* if(collide(player.getRectangle(), ricardo.getRectangle())){
                       player.moveDown();
                       return;
 
-                    }
+                    }*/
                     player.moveDown();
+                    currentMove = 0;
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
-                    if (collide(player.getRectangle(), ricardo.getRectangle())){
+                    /*if (collide(player.getRectangle(), ricardo.getRectangle())){
                       player.moveDown();
                       return;
-                    }
+                    }*/
                     player.moveUp();
+                    currentMove = 1;
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
-                    if (collide(player.getRectangle(), ricardo.getRectangle())){
+                    /*if (collide(player.getRectangle(), ricardo.getRectangle())){
                        player.moveLeft();
                        player.moveLeft();
                        return;
 
-                    }
+                    }*/
                     player.moveRight();
+                    currentMove = 2;
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
 
-                   if (collide(player.getRectangle(), ricardo.getRectangle())) {
+                 /*  if (collide(player.getRectangle(), ricardo.getRectangle())) {
                        player.moveRight();
                        player.moveRight();
                        return;
 
-                   }
+                   }*/
                     player.moveLeft();
+                    currentMove = 3;
                 }
 
 
