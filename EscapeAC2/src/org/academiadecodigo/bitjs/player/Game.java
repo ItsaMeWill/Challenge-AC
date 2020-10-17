@@ -30,7 +30,7 @@ public class Game implements KeyboardHandler {
     private Rectangle tables;
     private Rectangle djSet;
     private Rectangle puffs;
-     private Picture wrongAnswer= new Picture(200,200,"resources/WRONGANSFINAL.png");
+     private Picture wrongAnswer= new Picture(170,170,"resources/WRONGANSFINAL.png");
     private Rectangle[] macRoomObstacles = new Rectangle[3];
     private Rectangle[] pizzaRoomObstacles = new Rectangle[1];
     private Rectangle[] relvinhaRoomObstacles = new Rectangle[2];
@@ -154,11 +154,13 @@ public class Game implements KeyboardHandler {
                             break;
                         case 2:
                             player.beerToHealth();
+                            player.createBeers(player.getHealth());
                             currentAnswer = 0;
                             wrongAnswer.draw();
                             break;
                         case 3:
                             player.beerToHealth();
+                            player.createBeers(player.getHealth());
                             currentAnswer = 0;
                             wrongAnswer.draw();
                             break;
