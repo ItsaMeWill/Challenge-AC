@@ -22,7 +22,7 @@ public class Ricardo extends MCS {
 
 
     public void makeQuestion() {
-        super.makeQuestion((new Picture(10,10,"resources/9teenbattle.png")));
+        super.makeQuestion((new Picture(10,10,"resources/9TEENBATTLE.png")));
     }
 
     public Question getQuestion() {

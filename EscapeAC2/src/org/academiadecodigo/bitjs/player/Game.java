@@ -29,6 +29,7 @@ public class Game implements KeyboardHandler {
     private int currentRoom;
     private Rectangle tables;
     private Rectangle djSet;
+     private Picture wrongAnswer= new Picture(200,200,"resources/WRONGANSFINAL.png");
     private Rectangle[] macRoomObstacles = new Rectangle[3];
     private Rectangle[] pizzaRoomObstacles = new Rectangle[1];
 
@@ -84,11 +85,12 @@ public class Game implements KeyboardHandler {
                         case 1:
                             player.beerToHealth();
                             currentAnswer = 0;
-                            //new Picture(200,200,"resources/WrongAnswer.png").draw();
+                           wrongAnswer.draw();
                             break;
                         case 2:
                             player.hasKey();
                             ricardo.getQuizScreen().delete();
+                            wrongAnswer.delete();
                             //new Picture(200,200,"resources/CorrectAnswer.png").draw();
                             break;
                         case 3:
@@ -164,7 +166,7 @@ public class Game implements KeyboardHandler {
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 150 && player.getRectangle().getY() - player.getRectangle().getHeight() == 40) {
-
+                pizzaRoom.getPicture().delete();
 
                 break;
             }
