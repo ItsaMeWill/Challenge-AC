@@ -4,22 +4,22 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public class Ricardo extends MCS {
+public class Jojo extends MCS{
 
     private Question question;
     private String correctAnswer;
 
 
-    public Ricardo() {
-        super(new Picture(80, 80, "resources/rsz_1player.png"),
-                new Rectangle(80, 80, 50, 50));
-        this.question = Question.QUESTION1;
-        this.correctAnswer = Question.QUESTION1.getAnswer2();
+    public Jojo(){
+        super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
+        this.question = Question.QUESTION3;
+        this.correctAnswer = Question.QUESTION3.getAnswer2();
+
     }
 
-
     public void makeQuestion(Question question) {
-        super.makeQuestion(new Picture(10, 10, "resources/9teenbattle.png"));
+        super.makeQuestion(
+                new Picture(10,10,"resources/9teenbattle.png"));
     }
 
     public Question getQuestion() {
@@ -30,6 +30,4 @@ public class Ricardo extends MCS {
         return correctAnswer;
     }
 }
-
-
 
