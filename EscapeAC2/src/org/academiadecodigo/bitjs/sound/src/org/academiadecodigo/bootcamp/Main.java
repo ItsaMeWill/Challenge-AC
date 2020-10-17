@@ -7,6 +7,14 @@ public class Main {
 
     public static void main(String[] args) {
 
+        Sound sound = new Sound("/resources/soundtrack.wav");
+        sound.play(true);
+
+        while(true){
+
+
+
+        }
 
     }
 }

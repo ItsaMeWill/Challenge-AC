@@ -9,6 +9,7 @@ abstract public class MCS {
     private Picture face;
     private Rectangle rectangle;
     private Picture quizScreen;
+    private int correctAnswer;
 
 
     public MCS(Picture face, Rectangle rectangle) {

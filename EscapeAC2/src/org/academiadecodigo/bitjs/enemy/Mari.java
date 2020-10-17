@@ -4,23 +4,17 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Mari extends MCS {
+    int correctAnswer;
 
-
-    private Question question;
-    private String correctAnswer;
-    private Picture face;
-
-
-    public Mari() {
-        super(new Picture(80, 80, "resources/player.png"), new Rectangle(80, 80, 50, 50));
-        this.question = Question.QUESTION4;
-        this.correctAnswer = Question.QUESTION4.getAnswer1();
-
-
+    public Mari(){
+        super(new Picture(330,360, "resources/mari_face.png"), new Rectangle(330,360,50,50));
+        this.correctAnswer = 1;
     }
-
     public void makeQuestion() {
-        super.makeQuestion(new Picture(10, 10,"maribattle_txt.png" ));
+        super.makeQuestion((new Picture(10,10,"resources/Maribattle.png")));
+    }
+    public int getCorrectAnswer() {
+        return 2;
     }
 }
 

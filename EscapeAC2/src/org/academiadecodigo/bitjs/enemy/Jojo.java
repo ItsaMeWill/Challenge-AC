@@ -7,13 +7,13 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Jojo extends MCS{
 
     private Question question;
-    private String correctAnswer;
+    private int correctAnswer;
 
 
     public Jojo(){
         super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
-        this.question = Question.QUESTION3;
-        this.correctAnswer = Question.QUESTION3.getAnswer2();
+
+        this.correctAnswer =3;
 
     }
 
@@ -26,7 +26,7 @@ public class Jojo extends MCS{
         return question;
     }
 
-    public String getCorrectAnswer() {
+    public int getCorrectAnswer() {
         return correctAnswer;
     }
 }

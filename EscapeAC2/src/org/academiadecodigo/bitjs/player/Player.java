@@ -10,7 +10,6 @@ public class Player {
     private Picture face;
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
-    private int maxHealth;
     private int currentHealth = 3;
 
 
@@ -18,7 +17,7 @@ public class Player {
     public Player(int x, int y) {
         this.face = new Picture(x, y, "resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
-        this.currentHealth = this.maxHealth;
+
     }
 
 

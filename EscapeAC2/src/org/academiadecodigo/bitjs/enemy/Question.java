@@ -4,14 +4,10 @@ public enum Question {
 
 
 
-    QUESTION1(" How much variable types exist in Java ", "1) 3 types. Int, Boolean, String ",
-    "2 types, primitives and reference types","Infinite"),
-    QUESTION2(" What's JVM ? ", "An Interpreter", "A text editor","A compiler"),
-    QUESTION3("An interface : ","make websites prettier",
-            "defines the attributes a class must implement",
-            "defines the behaviours a class must implement"),
-    QUESTION4("NullPointerException means :","Calling the instance method of a null object",
-            " class","Calling a null file");
+    QUESTION1(" Quantos tipos de variáveis existem em JAVA? ", "1) 3 tipos. Int, Boolean, String. ",
+            "2) 2 tipos. Referência e primitivos","3) Infinitos"),
+    QUESTION2(" O que é a JVM ? ", "", "asdas","asda");
+
 
 
     private String question;
