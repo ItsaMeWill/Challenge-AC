@@ -63,7 +63,7 @@ public class Game implements KeyboardHandler {
         macRoomObstacles[1] = tables;
 
 
-       while (true) {
+       /*while (true) {
 
             System.out.println("");
 
@@ -94,7 +94,7 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }
+        }*/
        while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 90) {
@@ -122,7 +122,7 @@ public class Game implements KeyboardHandler {
         mari.getRectangle().draw();
         pizzaRoomObstacles[0] = mari.getRectangle();
 
-        while (true) {
+       /* while (true) {
 
             System.out.println("");
 
@@ -153,7 +153,7 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }
+        }*/
 
         while (true) {
             System.out.println("");
