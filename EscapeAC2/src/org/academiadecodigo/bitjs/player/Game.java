@@ -1,14 +1,13 @@
 package org.academiadecodigo.bitjs.player;
 
-import org.academiadecodigo.bitjs.enemy.MCS;
 import org.academiadecodigo.bitjs.enemy.Mari;
 import org.academiadecodigo.bitjs.enemy.Question;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
 import org.academiadecodigo.bitjs.rooms.MiddleRoom;
 import org.academiadecodigo.bitjs.rooms.PizzaRoom;
+import org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -17,12 +16,12 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Game implements KeyboardHandler {
 
+    public boolean areCollided;
     private Picture movable;
     private Player player;
     private MacRoom macRoom;
     private PizzaRoom pizzaRoom;
     private MiddleRoom middleRoom;
-    public boolean areCollided;
     private Picture quiz;
     private Question question;
     private Ricardo ricardo;
@@ -40,10 +39,11 @@ public class Game implements KeyboardHandler {
     private KeyboardEvent one = new KeyboardEvent();
     private KeyboardEvent two = new KeyboardEvent();
     private KeyboardEvent three = new KeyboardEvent();
+    private Sound soundtrack = new Sound("sound/resources/soundtrack.wav");
 
     public Game() {
         player = new Player(200, 200);
-
+        
         moves();
     }
 
@@ -60,7 +60,7 @@ public class Game implements KeyboardHandler {
         ricardo.getRectangle().draw();
         ricardo.getFace().draw();
         movable = player.getFace();
-        tables = new Rectangle(155,200,230,270);
+        tables = new Rectangle(155, 200, 230, 270);
         tables.draw();
         macRoomObstacles[0] = ricardo.getRectangle();
         macRoomObstacles[1] = tables;
@@ -98,14 +98,14 @@ public class Game implements KeyboardHandler {
                 break;
             }
         }*/
-       while (true) {
+        while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 80) {
                 ricardo.getRectangle().delete();
                 break;
             }
         }
-       return;
+        return;
     }
 
     public void startLevel2() {
@@ -216,8 +216,8 @@ public class Game implements KeyboardHandler {
     public void moving(KeyboardEvent keyboardEvent) {
 
         for (int i = 0; i < macRoomObstacles.length; i++) {
-            if(collide(player.getRectangle(), macRoomObstacles[i])){
-                switch (currentMove){
+            if (collide(player.getRectangle(), macRoomObstacles[i])) {
+                switch (currentMove) {
                     case 0:
                         player.moveUp();
                         break;
@@ -234,34 +234,34 @@ public class Game implements KeyboardHandler {
             }
         }
 
-                if (keyboardEvent == down && movable.getY() < 435) {
+        if (keyboardEvent == down && movable.getY() < 435) {
                     /* if(collide(player.getRectangle(), ricardo.getRectangle())){
                       player.moveDown();
                       return;
 
                     }*/
-                    player.moveDown();
-                    currentMove = 0;
-                }
-                if (keyboardEvent == up && movable.getY() > 30) {
+            player.moveDown();
+            currentMove = 0;
+        }
+        if (keyboardEvent == up && movable.getY() > 30) {
                     /*if (collide(player.getRectangle(), ricardo.getRectangle())){
                       player.moveDown();
                       return;
                     }*/
-                    player.moveUp();
-                    currentMove = 1;
-                }
-                if (keyboardEvent == right && movable.getX() < 435) {
+            player.moveUp();
+            currentMove = 1;
+        }
+        if (keyboardEvent == right && movable.getX() < 435) {
                     /*if (collide(player.getRectangle(), ricardo.getRectangle())){
                        player.moveLeft();
                        player.moveLeft();
                        return;
 
                     }*/
-                    player.moveRight();
-                    currentMove = 2;
-                }
-                if (keyboardEvent == left && movable.getX() > 30){
+            player.moveRight();
+            currentMove = 2;
+        }
+        if (keyboardEvent == left && movable.getX() > 30) {
 
                  /*  if (collide(player.getRectangle(), ricardo.getRectangle())) {
                        player.moveRight();
@@ -269,17 +269,17 @@ public class Game implements KeyboardHandler {
                        return;
 
                    }*/
-                    player.moveLeft();
-                    currentMove = 3;
-                }
+            player.moveLeft();
+            currentMove = 3;
+        }
 
 
-            }
+    }
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         moving(keyboardEvent);
-       selectedAnswers(keyboardEvent);
+        selectedAnswers(keyboardEvent);
     }
 
     @Override
@@ -317,10 +317,10 @@ public class Game implements KeyboardHandler {
         return true;
     }
 
-    public void verifyAnswer(int currentAnswer){
+    public void verifyAnswer(int currentAnswer) {
         System.out.println("pppp");
 
-        switch (currentAnswer){
+        switch (currentAnswer) {
             case 1:
                 player.beerToHealth();
                 currentAnswer = 0;
