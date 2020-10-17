@@ -11,6 +11,7 @@ abstract public class MCS {
     private Picture face;
     private Rectangle rectangle;
     private Picture quizScreen;
+    private int correctAnswer;
 
 
     public MCS(Picture face, Rectangle rectangle){
@@ -20,7 +21,7 @@ abstract public class MCS {
     }
 
 
-    public void makeQuestion(Question question,Text ans1,Text ans2,Text ans3,Picture quizScreen) {
+    public void makeQuestion(Picture quizScreen) {
             this.quizScreen = quizScreen;
             quizScreen.draw();
 

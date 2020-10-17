@@ -12,8 +12,6 @@ public class Player {
     private Rectangle rectangle;
     private int health = 3;
 
-
-
     public Player(int x, int y) {
         this.face = new Picture(x, y, "resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
