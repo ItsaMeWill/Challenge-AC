@@ -13,8 +13,8 @@ public class Ricardo extends MCS {
     private Rectangle rectangle;
 
         public Ricardo(){
-            super(new Picture(150,80, "resources/rsz_1player.png"),
-                    new Rectangle(150,80,50,50));
+            super(new Picture(140,50, "resources/rsz_1player.png"),
+                    new Rectangle(140,50,50,50));
 
         this.question = Question.QUESTION1;
         this.correctAnswer = 2;
@@ -22,7 +22,7 @@ public class Ricardo extends MCS {
 
 
     public void makeQuestion() {
-        super.makeQuestion((new Picture(10,10,"resources/9TEENBATTLE.png")));
+        super.makeQuestion((new Picture(10,10,"resources/9TEENBATTLE500.png")));
     }
 
     public Question getQuestion() {
@@ -30,7 +30,7 @@ public class Ricardo extends MCS {
     }
 
     public int getCorrectAnswer() {
-        return 2;
+        return correctAnswer;
     }
 }
 

@@ -14,6 +14,7 @@ public class Player {
     private int moveCounter;
     private int moveSet;
     private boolean isHigh = false;
+    private boolean isColliding = false;
 
     public Player(int x, int y) {
         this.face[0] = new Picture(x, y, "resources/up copy.png");
@@ -27,7 +28,9 @@ public class Player {
         beers[0] = new Picture(40,460,"resources/Beer.png");
         beers[1] = new Picture(90,460,"resources/Beer.png");
         beers[2] = new Picture(140,460,"resources/Beer.png");
+
         for (int i = 0; i < health; i++){
+
             beers[i].draw();
         }
     }
@@ -56,51 +59,53 @@ public class Player {
     }
 
     public void moveUp() {
-        this.moveCounter += 1;
-        for (int i = 0; i < face.length; i++){
-            this.face[i].translate(0, -10);
-            this.face[i].delete();
+        if (!isColliding) {
+            this.moveCounter += 1;
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(0, -10);
+                this.face[i].delete();
+            }
+            this.face[0].draw();
+            this.rectangle.translate(0, -10);
         }
-        this.face[0].draw();
-        this.rectangle.translate(0, -10);
     }
 
     public void moveDown() {
-        this.moveCounter += 1;
-        for (int i = 0; i < face.length; i++){
-            this.face[i].translate(0, 10);
-            this.face[i].delete();
+        if (!isColliding) {
+            this.moveCounter += 1;
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(0, 10);
+                this.face[i].delete();
+            }
+            this.face[1].draw();
+            this.rectangle.translate(0, 10);
         }
-        this.face[1].draw();
-        this.rectangle.translate(0, 10);
     }
 
     public void moveRight() {
-        this.moveCounter += 1;
-        for (int i = 0; i < face.length; i++){
-            this.face[i].translate(10, 0);
-            this.face[i].delete();
+        if (!isColliding) {
+            this.moveCounter += 1;
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(10, 0);
+                this.face[i].delete();
+            }
+            this.face[3].draw();
+            this.rectangle.translate(10, 0);
         }
-        this.face[3].draw();
-        this.rectangle.translate(10, 0);
     }
+
 
     public void moveLeft(){
-        this.moveCounter += 1;
-        for (int i = 0; i < face.length; i++){
-            this.face[i].translate(-10, 0);
-            this.face[i].delete();
+        if (!isColliding) {
+            this.moveCounter += 1;
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(-10, 0);
+                this.face[i].delete();
+            }
+            this.face[2].draw();
+            this.rectangle.translate(-10, 0);
         }
-        this.face[2].draw();
-        this.rectangle.translate(-10, 0);
     }
-
-    /*public void refresh(){
-         face.delete();
-         rectangle.delete();
-         face.draw();
-         rectangle.draw();
-    }*/
 
     public void cannabisOn(){
         this.isHigh = true;
@@ -110,8 +115,11 @@ public class Player {
         return this.isHigh;
     }
 
-    public Picture getFace () {
-        return this.face[0];
+    public void updatePosition (double x, double y, int lastDirection) {
+        for (int i = 0; i < face.length; i++){
+            face[i].translate(x,y);
+        }
+        face[lastDirection].draw();
     }
 
     public Rectangle getRectangle () {
@@ -128,6 +136,18 @@ public class Player {
 
     public int getMoveSet(){
         return this.moveSet;
+    }
+
+    public Picture getFace(){
+        return this.face[0];
+    }
+
+    public boolean isColliding() {
+        return isColliding;
+    }
+
+    public void setColliding(boolean colliding) {
+        isColliding = colliding;
     }
 
     public void setMoveSet(int moveSet){

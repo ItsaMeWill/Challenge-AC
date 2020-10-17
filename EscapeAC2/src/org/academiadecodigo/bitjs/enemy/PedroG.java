@@ -4,9 +4,16 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class PedroG extends MCS {
-
+private int correctAnswer;
     public PedroG(){
-        super(new Picture(330,360, "resources/pedro_face.png"), new Rectangle(330,360,50,50));
+        super(new Picture(50,50, "resources/PedroFace.png"), new Rectangle(50,50,50,50));
+        correctAnswer = 1;
+    }
+    public void makeQuestion() {
+        super.makeQuestion((new Picture(10,10,"resources/rsz_pedrobattle (1).png")));
     }
 
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
 }
