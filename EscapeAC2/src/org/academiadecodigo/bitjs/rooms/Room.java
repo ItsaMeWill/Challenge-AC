@@ -15,7 +15,7 @@ public abstract class Room{
 
     private int PADDING = 10;
 
-    public Room(int col, int row, Picture picture){
+    public Room(/*int col, int row, */Picture picture){
         this.col = col;
         this.row = row;
         this.picture = picture;

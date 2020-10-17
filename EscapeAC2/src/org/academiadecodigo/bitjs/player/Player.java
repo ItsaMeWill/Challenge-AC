@@ -22,7 +22,9 @@ public class Player {
         beers[0] = new Picture(40,460,"resources/Beer.png");
         beers[1] = new Picture(90,460,"resources/Beer.png");
         beers[2] = new Picture(140,460,"resources/Beer.png");
+
         for (int i = 0; i < health; i++){
+
             beers[i].draw();
         }
     }
