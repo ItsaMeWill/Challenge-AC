@@ -4,7 +4,7 @@ import org.academiadecodigo.simplegraphics.pictures.*;
 public class RelvinhaRoom extends Room{
 
     public RelvinhaRoom(){
-        super(/*50,50,*/ new Picture(10,10,"resources/Relvinha Room.png"));
+        super(/*50,50,*/ new Picture(10,10,"resources/relvinha4.png"));
         super.init();
     }
 

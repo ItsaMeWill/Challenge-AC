@@ -53,11 +53,7 @@ public class Game implements KeyboardHandler {
 
         player = new Player(420, 400);
         player.createBeers(player.getHealth());
-        player.hasKey();
-        player.beerToHealth();
-
         currentRoom = 1;
-
         player.getRectangle().draw();
         player.getFace().draw();
         ricardo = new Ricardo();
@@ -73,13 +69,13 @@ public class Game implements KeyboardHandler {
         macRoomObstacles[2] = djSet;
 
 
-       /*while (true) {
+       while (true) {
 
             System.out.println("");
 
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
                 ricardo.makeQuestion();
-                ricardo.getQuizScreen();
+
 
                 while (currentAnswer != ricardo.getCorrectAnswer()){
                     System.out.println("");
@@ -108,13 +104,14 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }*/
+        }
        while (true) {
             System.out.println("");
 
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 90) {
                 ricardo.getRectangle().delete();
                 ricardo.getFace().delete();
+                macRoom.getPicture().delete();
 
                 break;
             }
@@ -128,25 +125,22 @@ public class Game implements KeyboardHandler {
         player.createBeers(player.getHealth());
         currentRoom = 2;
         currentAnswer = 0;
-
         player.createBeers(player.getHealth());
-
         player.getFace().translate(-400, 0);
         player.getRectangle().translate(-400, 0);
-       // player.redrawBeer();
         player.refresh();
         mari = new Mari();
         mari.getFace().draw();
         mari.getRectangle().draw();
         pizzaRoomObstacles[0] = mari.getRectangle();
 
-       /* while (true) {
+       while (true) {
 
             System.out.println("");
 
             if (collide(player.getRectangle(), mari.getRectangle())) {
                 mari.makeQuestion();
-                mari.getQuizScreen();
+
 
                 while (currentAnswer != mari.getCorrectAnswer()){
                     System.out.println("");
@@ -156,14 +150,17 @@ public class Game implements KeyboardHandler {
                         case 1:
                             player.hasKey();
                             mari.getQuizScreen().delete();
+                            wrongAnswer.delete();
                             break;
                         case 2:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrongAnswer.draw();
                             break;
                         case 3:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrongAnswer.draw();
                             break;
                     }
 
@@ -171,7 +168,7 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }*/
+        }
 
         while (true) {
             System.out.println("");
@@ -179,6 +176,7 @@ public class Game implements KeyboardHandler {
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 200 && player.getRectangle().getY() == 30) {
                 mari.getRectangle().delete();
                 mari.getFace().delete();
+                pizzaRoom.getPicture().delete();
 
                 break;
             }
@@ -187,6 +185,7 @@ public class Game implements KeyboardHandler {
     }
 
     public void startLevel3() {
+        currentAnswer = 0;
         relvinhaRoom = new RelvinhaRoom();
         relvinhaRoom.getPicture().draw();
         player.createBeers(player.getHealth());
@@ -194,7 +193,6 @@ public class Game implements KeyboardHandler {
         player.getRectangle().translate(250, 400);
         currentRoom = 3;
         player.refresh();
-        player.hasKey();
         pedroG = new PedroG();
         pedroG.getFace().draw();
         pedroG.getRectangle().draw();
@@ -241,37 +239,64 @@ public class Game implements KeyboardHandler {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 300) {
                 pedroG.getRectangle().delete();
+                pedroG.getFace().delete();
+                relvinhaRoom.getPicture().delete();
                 break;
             }
         }
+
+
         return;
 
     }
 
     public void startLevel4(){
+        currentAnswer = 0;
         breakRoom = new BreakRoom();
         breakRoom.getPicture().draw();
         player.createBeers(player.getHealth());
-        player.getFace().translate(-300, 0);
-        player.getRectangle().translate(-300, 0);
+        player.getFace().translate(-400, -280);
+        player.getRectangle().translate(-400, -280);
         player.refresh();
-        player.hasKey();
         jojo = new Jojo();
         jojo.getFace().draw();
         jojo.getRectangle().draw();
 
-        /*while (true) {
+     while (true) {
             System.out.println("");
-            System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
-            if (collide(player.getRectangle(), ricardo.getRectangle())) {
-                ricardo.makeQuestion(Question.QUESTION1);
-                ricardo.getQuizScreen();
-                ricardo.getQuizScreen().delete();
 
+            if (collide(player.getRectangle(), jojo.getRectangle())) {
+                jojo.makeQuestion();
+                jojo.getQuizScreen();
+
+                while (currentAnswer != jojo.getCorrectAnswer()){
+                    System.out.println("");
+                    //verifyAnswer(currentAnswer);
+
+                    switch (currentAnswer){
+                        case 1:
+                            player.beerToHealth();
+                            currentAnswer = 0;
+                            wrongAnswer.draw();
+                            break;
+                        case 2:
+                            player.beerToHealth();
+                            currentAnswer = 0;
+                            wrongAnswer.draw();
+                            break;
+                        case 3:
+                            player.hasKey();
+                            jojo.getQuizScreen().delete();
+                            wrongAnswer.delete();
+                            break;
+
+                    }
+
+                }
 
                 break;
             }
-        }*/
+        }
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 200) {
@@ -285,13 +310,13 @@ public class Game implements KeyboardHandler {
     public void selectedAnswers(KeyboardEvent keyboardEvent) {
 
         if (keyboardEvent == one) {
-            System.out.println("kerelkfer");
+
             this.currentAnswer = 1;
 
         }
 
         if (keyboardEvent == two) {
-            System.out.println("knewefl");
+
             this.currentAnswer = 2;
 
         }

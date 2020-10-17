@@ -4,9 +4,15 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Jojo extends MCS {
-
+    int correctAnswer;
     public Jojo(){
-        super(new Picture(330,360, "resources/jojo_face.png"), new Rectangle(330,360,50,50));
+        super(new Picture(330,360, "resources/jojoface2.1.png"), new Rectangle(330,360,50,50));
+        this.correctAnswer = 3;
     }
-
+    public void makeQuestion() {
+        super.makeQuestion((new Picture(10,10,"resources/JojoBattle500.png")));
+    }
+    public int getCorrectAnswer() {
+        return correctAnswer;
+    }
 }
