@@ -1,7 +1,14 @@
 package org.academiadecodigo.bitjs.rooms;
 
-public class BreakRoom{
+import org.academiadecodigo.simplegraphics.pictures.*;
 
-    //TODO override interface methods
+public class BreakRoom extends Room {
+
+    public BreakRoom() {
+        super(50, 50, new Picture(10, 10, "resources/BreakRoom.png"));
+        super.init();
+    }
+
+//TODO override interface methods
 
 }

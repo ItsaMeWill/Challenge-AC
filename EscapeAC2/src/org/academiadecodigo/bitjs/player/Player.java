@@ -10,33 +10,24 @@ public class Player {
     private Picture face;
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
-    private int maxHealth;
-    private int currentHealth = 3;
+    private int health = 3;
 
 
 
     public Player(int x, int y) {
         this.face = new Picture(x, y, "resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
-        this.currentHealth = this.maxHealth;
     }
 
 
-    public void createBeers(int currentHealth){
+    public void createBeers(int health){
         beers[0] = new Picture(40,460,"resources/Beer.png");
         beers[1] = new Picture(90,460,"resources/Beer.png");
         beers[2] = new Picture(140,460,"resources/Beer.png");
-        for (int i = 0; i < currentHealth; i++){
+        for (int i = 0; i < health; i++){
             beers[i].draw();
         }
     }
-
-    public void redrawBeer(){
-        for (int i = 0; i < 2; i++){
-            beers[i].draw();
-        }
-    }
-
 
     public void lostKey(){
         this.hasKey = false;
@@ -45,19 +36,18 @@ public class Player {
 
     public void hasKey(){
         this.hasKey = true;
-
-            this.key = new Picture(440,440, "resources/key.png");
-            this.key.draw();
+        this.key = new Picture(440,440, "resources/key.png");
+        this.key.draw();
 
 
     }
 
     public void beerToHealth(){
-        this.currentHealth--;
-        if (currentHealth == 2) beers[2].delete();
-        if (currentHealth == 1) beers[1].delete();
-        if (currentHealth == 0) beers[0].delete();
-        if (currentHealth == 0){
+        this.health--;
+        if (health == 2) beers[2].delete();
+        if (health == 1) beers[1].delete();
+        if (health == 0) beers[0].delete();
+        if (health == 0){
 
             //call gameover screen
         }
@@ -65,27 +55,27 @@ public class Player {
     }
 
     public void moveUp() {
-
         this.face.translate(0, -10);
         this.rectangle.translate(0, -10);
+       //System.out.println(this.getFace().getY());
     }
 
     public void moveDown() {
         this.face.translate(0, 10);
         this.rectangle.translate(0, 10);
-        System.out.println(this.getFace().getY());
+        //System.out.println(this.getFace().getY());
     }
 
     public void moveRight() {
         this.face.translate(10, 0);
         this.rectangle.translate(10, 0);
-        System.out.println(this.getFace().getX());
+        //System.out.println(this.getFace().getX());
     }
 
     public void moveLeft(){
         this.face.translate(-10, 0);
         this.rectangle.translate(-10, 0);
-        System.out.println(this.getFace().getX());
+        //System.out.println(this.getFace().getX());
     }
 
     public void refresh(){
@@ -103,22 +93,10 @@ public class Player {
             return rectangle;
         }
 
-        public void translate(int x, int y){
-        rectangle.translate(x,y);
-        face.translate(x,y);
-        }
-
-    public int getCurrentHealth() {
-        return currentHealth;
+    public int getHealth() {
+        return health;
     }
 
-    public void setHasKey(boolean hasKey) {
-        this.hasKey = hasKey;
-    }
-
-    public void setCurrentHealth(int currentHealth) {
-        this.currentHealth = currentHealth;
-    }
 }
 
 
