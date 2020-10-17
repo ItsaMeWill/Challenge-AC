@@ -1,31 +1,19 @@
 package org.academiadecodigo.bitjs.enemy;
 
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-public class Jojo extends MCS{
-
-    private Question question;
-    private int correctAnswer;
-
-
+public class Jojo extends MCS {
+    int correctAnswer;
     public Jojo(){
-        super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
-
-        this.correctAnswer =3;
-
+        super(new Picture(330,360, "resources/jojoface2.1.png"), new Rectangle(330,360,50,50));
+        this.correctAnswer = 3;
     }
-
-    public void makeQuestion(Question question) {
-        super.makeQuestion(
-                new Picture(10,10,"resources/9teenbattle.png"));
+    public void makeQuestion() {
+        super.makeQuestion((new Picture(10,10,"resources/JojoBattle500.png")));
     }
-
-    public Question getQuestion() {
-        return question;
-    }
-
     public int getCorrectAnswer() {
         return correctAnswer;
     }

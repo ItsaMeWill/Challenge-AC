@@ -14,9 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
         Game game1 = new Game();
+
         game1.startLevel1();
-        game1.startLevel2();
-        game1.startLevel3();
 
     }
 }

@@ -1,10 +1,10 @@
 package org.academiadecodigo.bitjs.rooms;
 
 import org.academiadecodigo.simplegraphics.pictures.*;
-public class MiddleRoom extends Room{
+public class RelvinhaRoom extends Room{
 
-    public MiddleRoom(){
-        super(50,50, new Picture(10,10,"resources/anotherRoom.png"));
+    public RelvinhaRoom(){
+        super(/*50,50,*/ new Picture(10,10,"resources/relvinha4.png"));
         super.init();
     }
 
