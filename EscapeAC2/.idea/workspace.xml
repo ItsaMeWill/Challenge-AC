@@ -20,6 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/Claps.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Jojo.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Mari.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Wrong.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/bobmarley.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/pedrovoice.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/ricardovoice.wav" beforeDir="false" afterPath="$PROJECT_DIR$/resources/ricardovoice.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
