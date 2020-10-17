@@ -10,9 +10,9 @@ public class Player {
     private Picture face;
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
-    private int maxHealth = 3;
-    private int currentHealth;
-    private boolean isAborded;
+    private int maxHealth;
+    private int currentHealth = 3;
+
 
 
     public Player(int x, int y) {
@@ -45,8 +45,11 @@ public class Player {
 
     public void hasKey(){
         this.hasKey = true;
-        this.key = new Picture(440,440, "resources/Key.png");
-        this.key.draw();
+
+            this.key = new Picture(440,440, "resources/key.png");
+            this.key.draw();
+
+
     }
 
     public void beerToHealth(){
@@ -65,8 +68,6 @@ public class Player {
 
         this.face.translate(0, -10);
         this.rectangle.translate(0, -10);
-        System.out.println(this.getFace().getY());
-        // this.position.setRow(position.getRow() -10);
     }
 
     public void moveDown() {
@@ -102,24 +103,23 @@ public class Player {
             return rectangle;
         }
 
-        public int getCurrentHealth(){
-            return this.currentHealth;
+        public void translate(int x, int y){
+        rectangle.translate(x,y);
+        face.translate(x,y);
         }
 
-        public void setAborded ( boolean aborded){
-            isAborded = aborded;
-        }
-
-        public boolean isAborded () {
-            return isAborded;
-        }
-
-        public int answerQuestion () {
-            return 0;
-        }
-
-
+    public int getCurrentHealth() {
+        return currentHealth;
     }
+
+    public void setHasKey(boolean hasKey) {
+        this.hasKey = hasKey;
+    }
+
+    public void setCurrentHealth(int currentHealth) {
+        this.currentHealth = currentHealth;
+    }
+}
 
 
 
