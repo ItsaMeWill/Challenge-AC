@@ -34,7 +34,7 @@ public class Game implements KeyboardHandler {
     private KeyboardEvent three = new KeyboardEvent();
 
     public Game() {
-
+        moves();
     }
 
     public void startLevel1() {
@@ -50,7 +50,7 @@ public class Game implements KeyboardHandler {
         movable = player.getFace();
         tables = new Rectangle(155,200,230,270);
         tables.draw();
-        moves();
+
         //
 
         while (true) {

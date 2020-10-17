@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +101,7 @@
       <workItem from="1602705490139" duration="167000" />
       <workItem from="1602705688650" duration="1646000" />
       <workItem from="1602887759257" duration="354000" />
+      <workItem from="1602940594893" duration="336000" />
     </task>
     <servers />
   </component>
