@@ -31,6 +31,8 @@ public class Game implements KeyboardHandler {
     private Rectangle tables;
     private Rectangle[] macRoomObstacles = new Rectangle[2];
     private Rectangle[] pizzaRoomObstacles = new Rectangle[1];
+    private Rectangle[] middleRoomObstacles = new Rectangle[1];
+    private Rectangle[] breakRoomObstacles = new Rectangle[3];
 
     private KeyboardEvent left = new KeyboardEvent();
     private KeyboardEvent right = new KeyboardEvent();
@@ -61,7 +63,6 @@ public class Game implements KeyboardHandler {
         tables.draw();
         macRoomObstacles[0] = ricardo.getRectangle();
         macRoomObstacles[1] = tables;
-
 
        /*while (true) {
 
@@ -109,13 +110,13 @@ public class Game implements KeyboardHandler {
     public void startLevel2() {
         pizzaRoom = new PizzaRoom();
         pizzaRoom.getPicture().draw();
-        player.createBeers(player.getHealth());
         currentRoom = 1;
         currentAnswer = 0;
         player.createBeers(player.getHealth());
         player.getFace().translate(-400, 0);
         player.getRectangle().translate(-400, 0);
-        player.refresh();
+        //player.refresh();
+        player.cannabisOn();
         player.hasKey();
         mari = new Mari();
         mari.getFace().draw();
@@ -156,7 +157,7 @@ public class Game implements KeyboardHandler {
         }*/
 
         while (true) {
-            System.out.println("");
+            //System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 200 && player.getRectangle().getY() == 40) {
                 mari.getRectangle().delete();
                 mari.getFace().delete();
@@ -173,7 +174,7 @@ public class Game implements KeyboardHandler {
         player.getFace().translate(-30, 400);
         player.getRectangle().translate(-30, 400);
         currentRoom = 3;
-        player.refresh();
+        //player.refresh();
         player.hasKey();
         pedroG = new PedroG();
         pedroG.getFace().draw();
@@ -208,7 +209,7 @@ public class Game implements KeyboardHandler {
         player.createBeers(player.getHealth());
         player.getFace().translate(-300, 0);
         player.getRectangle().translate(-300, 0);
-        player.refresh();
+        //player.refresh();
         player.hasKey();
         jojo = new Jojo();
         jojo.getFace().draw();
@@ -313,45 +314,92 @@ public class Game implements KeyboardHandler {
 
     }
 
+    public void randomMov(){
+        switch (player.getMoveSet()){
+            case 0:
+                left.setKey(39);
+                right.setKey(37);
+                up.setKey(40);
+                down.setKey(38);
+                player.setMoveSet(1);
+                break;
+            case 1:
+                left.setKey(38);
+                right.setKey(40);
+                up.setKey(39);
+                down.setKey(37);
+                player.setMoveSet(2);
+                break;
+            case 2:
+                left.setKey(40);
+                right.setKey(38);
+                up.setKey(37);
+                down.setKey(39);
+                player.setMoveSet(0);
+                break;
+        }
 
 
+    }
 
     public void moving(KeyboardEvent keyboardEvent) {
 
-         switch (currentRoom){
-             case 0:
-                 collisionDetector(macRoomObstacles);
-                 break;
-             case 1:
-                 collisionDetector(pizzaRoomObstacles);
-                 break;
-         }
+        switch (currentRoom) {
+            case 0:
+                collisionDetector(macRoomObstacles);
+                break;
+            case 1:
+                collisionDetector(pizzaRoomObstacles);
+                break;
+            case 2:
+                collisionDetector(middleRoomObstacles);
+                break;
+            case 3:
+                collisionDetector(breakRoomObstacles);
+                break;
+        }
 
 
-                if (keyboardEvent == down && movable.getY() < 435) {
-
-                    player.moveDown();
-                    currentMove = 0;
-                }
-                if (keyboardEvent == up && movable.getY() > 30) {
-
-                    player.moveUp();
-                    currentMove = 1;
-                }
-                if (keyboardEvent == right && movable.getX() < 435) {
-
-                    player.moveRight();
-                    currentMove = 2;
-                }
-                if (keyboardEvent == left && movable.getX() > 30){
-
-
-                    player.moveLeft();
-                    currentMove = 3;
-                }
-
-
+        if (keyboardEvent == down && movable.getY() < 435) {
+            if (player.getIsHigh() && player.getMoveCounter() == 5) {
+                randomMov();
+                player.setMoveCounter(0);
+            } else {
+                player.moveDown();
+                currentMove = 0;
             }
+        }
+
+        if (keyboardEvent == up && movable.getY() > 30) {
+            if (player.getIsHigh() && player.getMoveCounter() == 5) {
+                randomMov();
+                player.setMoveCounter(0);
+            } else {
+                player.moveUp();
+                currentMove = 1;
+            }
+        }
+
+        if (keyboardEvent == right && movable.getX() < 435) {
+            if (player.getIsHigh() && player.getMoveCounter() == 5) {
+                randomMov();
+                player.setMoveCounter(0);
+            } else {
+                player.moveRight();
+                currentMove = 2;
+            }
+        }
+
+        if (keyboardEvent == left && movable.getX() > 30) {
+            if (player.getIsHigh() && player.getMoveCounter() == 5){
+                randomMov();
+                player.setMoveCounter(0);
+            } else {
+                player.moveLeft();
+                currentMove = 3;
+            }
+        }
+    }
 
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {

@@ -7,16 +7,21 @@ public class Player {
 
     private boolean hasKey;
     private Picture key;
-    private Picture face;
+    private Picture[] face = new Picture[4];
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
     private int health = 3;
+    private int moveCounter;
+    private int moveSet;
+    private boolean isHigh = false;
 
     public Player(int x, int y) {
-        this.face = new Picture(x, y, "resources/rsz_1cyan.png");
+        this.face[0] = new Picture(x, y, "resources/up copy.png");
+        this.face[1] = new Picture(x,y, "resources/down copy.png");
+        this.face[2] = new Picture(x,y, "resources/left copy.png");
+        this.face[3] = new Picture(x,y, "resources/right copy.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
     }
-
 
     public void createBeers(int health){
         beers[0] = new Picture(40,460,"resources/Beer.png");
@@ -36,8 +41,6 @@ public class Player {
         this.hasKey = true;
         this.key = new Picture(440,440, "resources/key.png");
         this.key.draw();
-
-
     }
 
     public void beerToHealth(){
@@ -53,46 +56,86 @@ public class Player {
     }
 
     public void moveUp() {
-        this.face.translate(0, -10);
+        this.moveCounter += 1;
+        for (int i = 0; i < face.length; i++){
+            this.face[i].translate(0, -10);
+            this.face[i].delete();
+        }
+        this.face[0].draw();
         this.rectangle.translate(0, -10);
-       //System.out.println(this.getFace().getY());
     }
 
     public void moveDown() {
-        this.face.translate(0, 10);
+        this.moveCounter += 1;
+        for (int i = 0; i < face.length; i++){
+            this.face[i].translate(0, 10);
+            this.face[i].delete();
+        }
+        this.face[1].draw();
         this.rectangle.translate(0, 10);
-        //System.out.println(this.getFace().getY());
     }
 
     public void moveRight() {
-        this.face.translate(10, 0);
+        this.moveCounter += 1;
+        for (int i = 0; i < face.length; i++){
+            this.face[i].translate(10, 0);
+            this.face[i].delete();
+        }
+        this.face[3].draw();
         this.rectangle.translate(10, 0);
-        //System.out.println(this.getFace().getX());
     }
 
     public void moveLeft(){
-        this.face.translate(-10, 0);
+        this.moveCounter += 1;
+        for (int i = 0; i < face.length; i++){
+            this.face[i].translate(-10, 0);
+            this.face[i].delete();
+        }
+        this.face[2].draw();
         this.rectangle.translate(-10, 0);
-        //System.out.println(this.getFace().getX());
     }
 
-    public void refresh(){
+    /*public void refresh(){
          face.delete();
          rectangle.delete();
          face.draw();
          rectangle.draw();
+    }*/
+
+    public void cannabisOn(){
+        this.isHigh = true;
     }
 
-        public Picture getFace () {
-            return this.face;
-        }
+    public boolean getIsHigh(){
+        return this.isHigh;
+    }
 
-        public Rectangle getRectangle () {
-            return rectangle;
-        }
+    public Picture getFace () {
+        return this.face[0];
+    }
+
+    public Rectangle getRectangle () {
+        return rectangle;
+    }
 
     public int getHealth() {
         return health;
+    }
+
+    public int getMoveCounter(){
+        return  this.moveCounter;
+    }
+
+    public int getMoveSet(){
+        return this.moveSet;
+    }
+
+    public void setMoveSet(int moveSet){
+       this.moveSet = moveSet;
+    }
+
+    public void setMoveCounter(int num){
+        this.moveCounter = num;
     }
 
 }
