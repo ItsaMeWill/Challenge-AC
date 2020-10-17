@@ -43,9 +43,14 @@ public class Game implements KeyboardHandler {
     private KeyboardEvent three = new KeyboardEvent();
     private Sound soundtrack = new Sound("/resources/soundtrack.wav");
     private Sound ricardoVoice = new Sound("/resources/ricardovoice.wav");
+    private Sound mariVoice = new Sound("/resources/Mari.wav");
+    private Sound pedroVoice = new Sound("/resources/pedrovoice.wav");
+    private Sound jojoVoice = new Sound("/resources/Jojo.wav");
+    private Sound claps = new Sound("/resources/Claps.wav");
+    private Sound wrong = new Sound("/resources/Wrong.wav");
+    private Sound highSound = new Sound("/resources/bobmarley.wav");
 
     public Game() {
-
 
     }
 
@@ -66,6 +71,7 @@ public class Game implements KeyboardHandler {
     }*/
 
     public void startLevel1() {
+
         moves();
 
         macRoom = new MacRoom();
@@ -85,9 +91,12 @@ public class Game implements KeyboardHandler {
         macRoomObstacles[0] = ricardo.getRectangle();
         macRoomObstacles[1] = tables;
 
+
         soundtrack.play(true);
 
         while (true) {
+
+            System.out.println("");
 
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
                 ricardo.makeQuestion();
@@ -95,22 +104,28 @@ public class Game implements KeyboardHandler {
                 soundtrack.stop();
                 ricardoVoice.play(true);
 
+
                 while (currentAnswer != ricardo.getCorrectAnswer()) {
                     System.out.println("");
                     //verifyAnswer(currentAnswer);
-                    soundtrack.play(true);
+
                     switch (currentAnswer) {
                         case 1:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrong.play(true);
                             break;
                         case 2:
+
                             player.hasKey();
                             ricardo.getQuizScreen().delete();
+                            claps.play(true);
                             break;
+
                         case 3:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrong.play(true);
                             break;
                     }
                 }
@@ -163,10 +178,12 @@ public class Game implements KeyboardHandler {
                         case 2:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrong.play(true);
                             break;
                         case 3:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            wrong.play(true);
                             break;
                     }
 
@@ -178,7 +195,8 @@ public class Game implements KeyboardHandler {
 
         while (true) {
             System.out.println("");
-            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 150 && player.getRectangle().getY() - player.getRectangle().getHeight() == 40) {
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 150 &&
+                    player.getRectangle().getY() - player.getRectangle().getHeight() == 40) {
 
                 break;
             }
