@@ -11,7 +11,7 @@ public class Mari extends MCS {
         this.correctAnswer = 1;
     }
     public void makeQuestion() {
-        super.makeQuestion((new Picture(10,10,"resources/Maribattle.png")));
+        super.makeQuestion((new Picture(10,10,"resources/MARIBATTLEFINAL.png")));
     }
     public int getCorrectAnswer() {
         return 2;

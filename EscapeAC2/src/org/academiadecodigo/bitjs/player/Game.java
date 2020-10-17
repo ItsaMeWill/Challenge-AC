@@ -28,7 +28,8 @@ public class Game implements KeyboardHandler {
     private int currentAnswer = 10;
     private int currentRoom;
     private Rectangle tables;
-    private Rectangle[] macRoomObstacles = new Rectangle[2];
+    private Rectangle djSet;
+    private Rectangle[] macRoomObstacles = new Rectangle[3];
     private Rectangle[] pizzaRoomObstacles = new Rectangle[1];
 
     private KeyboardEvent left = new KeyboardEvent();
@@ -40,7 +41,7 @@ public class Game implements KeyboardHandler {
     private KeyboardEvent three = new KeyboardEvent();
 
     public Game() {
-        player = new Player(200, 200);
+
 
         moves();
 
@@ -50,18 +51,21 @@ public class Game implements KeyboardHandler {
         macRoom = new MacRoom();
         macRoom.getPicture().draw();
         currentRoom = 0;
-        player.createBeers(player.getCurrentHealth());
         player = new Player(420, 400);
+        player.createBeers(player.getCurrentHealth());
         player.getRectangle().draw();
         player.getFace().draw();
         ricardo = new Ricardo();
         ricardo.getRectangle().draw();
         ricardo.getFace().draw();
         movable = player.getFace();
-        tables = new Rectangle(155,200,230,270);
+        tables = new Rectangle(155,220,230,270);
         tables.draw();
+        djSet = new Rectangle(120,100,90,40);
+        djSet.draw();
         macRoomObstacles[0] = ricardo.getRectangle();
         macRoomObstacles[1] = tables;
+        macRoomObstacles[2] = djSet;
 
 
        while (true) {
@@ -80,10 +84,12 @@ public class Game implements KeyboardHandler {
                         case 1:
                             player.beerToHealth();
                             currentAnswer = 0;
+                            //new Picture(200,200,"resources/WrongAnswer.png").draw();
                             break;
                         case 2:
                             player.hasKey();
                             ricardo.getQuizScreen().delete();
+                            //new Picture(200,200,"resources/CorrectAnswer.png").draw();
                             break;
                         case 3:
                             player.beerToHealth();
@@ -99,6 +105,7 @@ public class Game implements KeyboardHandler {
        while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 80) {
+                macRoom.getPicture().delete();
                 break;
             }
         }
@@ -110,11 +117,12 @@ public class Game implements KeyboardHandler {
         pizzaRoom.getPicture().draw();
         currentRoom = 1;
         currentAnswer = 0;
-        player.createBeers(player.getCurrentHealth());
+       player.createBeers(player.getCurrentHealth());
+
         player.getFace().translate(-400, 0);
         player.getRectangle().translate(-400, 0);
+       // player.redrawBeer();
         player.refresh();
-        player.hasKey();
         mari = new Mari();
         mari.getFace().draw();
         mari.getRectangle().draw();
@@ -134,11 +142,11 @@ public class Game implements KeyboardHandler {
 
                    switch (currentAnswer){
                         case 1:
-                        player.hasKey();
-                        mari.getQuizScreen().delete();
+                            player.hasKey();
+                            mari.getQuizScreen().delete();
                             break;
                         case 2:
-                           player.beerToHealth();
+                            player.beerToHealth();
                             currentAnswer = 0;
                             break;
                         case 3:
@@ -156,6 +164,7 @@ public class Game implements KeyboardHandler {
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 150 && player.getRectangle().getY() - player.getRectangle().getHeight() == 40) {
+
 
                 break;
             }
@@ -272,23 +281,18 @@ public class Game implements KeyboardHandler {
 
 
                 if (keyboardEvent == down && movable.getY() < 435) {
-
                     player.moveDown();
                     currentMove = 0;
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
-
                     player.moveUp();
                     currentMove = 1;
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
-
                     player.moveRight();
                     currentMove = 2;
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
-
-
                     player.moveLeft();
                     currentMove = 3;
                 }
@@ -313,11 +317,7 @@ public class Game implements KeyboardHandler {
                 r1.getY() > r2.getY() + r2.getHeight() || r1.getY() + r1.getHeight() < r2.getY()) {
             return false;
         }
-
-
-
         return true;
     }
-
 
 }
