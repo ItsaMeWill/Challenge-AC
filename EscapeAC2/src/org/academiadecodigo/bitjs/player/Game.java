@@ -5,6 +5,8 @@ import org.academiadecodigo.bitjs.enemy.Mari;
 import org.academiadecodigo.bitjs.enemy.Question;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.MacRoom;
+import org.academiadecodigo.bitjs.rooms.MiddleRoom;
+import org.academiadecodigo.bitjs.rooms.PizzaRoom;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
@@ -18,6 +20,8 @@ public class Game implements KeyboardHandler {
     private Picture movable;
     private Player player;
     private MacRoom macRoom;
+    private PizzaRoom pizzaRoom;
+    private MiddleRoom middleRoom;
     public boolean areCollided;
     private Picture quiz;
     private Question question;
@@ -35,15 +39,18 @@ public class Game implements KeyboardHandler {
     private KeyboardEvent three = new KeyboardEvent();
 
     public Game() {
+        player = new Player(200, 200);
 
     }
 
     public void startLevel1() {
         macRoom = new MacRoom();
         macRoom.getPicture().draw();
-        player = new Player(200, 200);
+        player.createBeers(player.getCurrentHealth());
         player.getFace().draw();
         player.getRectangle().draw();
+        player.hasKey();
+        player.beerToHealth();
         ricardo = new Ricardo();
         ricardo.getRectangle().draw();
         ricardo.getFace().draw();
@@ -52,7 +59,7 @@ public class Game implements KeyboardHandler {
         moves();
         //
 
-        while (true) {
+        /*while (true) {
             System.out.println("");
             System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
             if (collide(player.getRectangle(), ricardo.getRectangle())) {
@@ -63,10 +70,10 @@ public class Game implements KeyboardHandler {
 
                 break;
             }
-        }
+        }*/
        while (true) {
             System.out.println("");
-            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490) {
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 80) {
                 ricardo.getRectangle().delete();
                 break;
             }
@@ -75,14 +82,54 @@ public class Game implements KeyboardHandler {
     }
 
     public void startLevel2() {
-        Rectangle newRoom = new Rectangle(10, 10, 500, 500);
-        newRoom.fill();
-        player.getRectangle().translate(-250, -100);
-        player.getRectangle().draw();
+        pizzaRoom = new PizzaRoom();
+        pizzaRoom.getPicture().draw();
+        player.createBeers(player.getCurrentHealth());
+        player.getFace().translate(-400, 0);
+        player.getRectangle().translate(-400, 0);
         player.refresh();
-        player.getFace().translate(-250, -100);
+        player.hasKey();
+        movable = player.getFace();
         mari = new Mari();
         mari.getFace().draw();
+        mari.getRectangle().draw();
+
+        /*while (true) {
+            System.out.println("");
+            System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
+            if (collide(player.getRectangle(), ricardo.getRectangle())) {
+                ricardo.makeQuestion(Question.QUESTION1);
+                ricardo.getQuizScreen();
+                ricardo.getQuizScreen().delete();
+
+
+                break;
+            }
+        }*/
+        while (true) {
+            System.out.println("");
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 150 && player.getRectangle().getY() - player.getRectangle().getHeight() == 40) {
+                mari.getRectangle().delete();
+                break;
+            }
+        }
+        return;
+
+    }
+
+    public void startLevel3() {
+        middleRoom = new MiddleRoom();
+        middleRoom.getPicture().draw();
+        player.createBeers(player.getCurrentHealth());
+        player.getFace().translate(0, -400);
+        player.getRectangle().translate(0, -400);
+        player.refresh();
+        player.lostKey();
+        movable = player.getFace();
+        mari = new Mari();
+        mari.getFace().draw();
+        mari.getRectangle().draw();
+
     }
 
     public void selectedAnswers(KeyboardEvent keyboardEvent) {
@@ -142,32 +189,33 @@ public class Game implements KeyboardHandler {
     public void moving(KeyboardEvent keyboardEvent) {
 
                 if (keyboardEvent == down && movable.getY() < 435) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveUp();
-                        player.moveUp();
-                    }
+                    //if (collide(player.getRectangle(),ricardo.getRectangle())){
+                    //    player.moveUp();
+                    //    player.moveUp();
+                    //}
                     player.moveDown();
+
                 }
                 if (keyboardEvent == up && movable.getY() > 30) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveDown();
-                        player.moveDown();
-                    }
+                    //if (collide(player.getRectangle(),ricardo.getRectangle())){
+                    //    player.moveDown();
+                    //   player.moveDown();
+                    //}
                     player.moveUp();
                 }
                 if (keyboardEvent == right && movable.getX() < 435) {
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                       player.moveRight();
-                        return;
-                    }
+                    //if (collide(player.getRectangle(),ricardo.getRectangle())){
+                    //   player.moveRight();
+                    //    return;
+                    //}
                     player.moveRight();
                 }
                 if (keyboardEvent == left && movable.getX() > 30){
 
-                    if (collide(player.getRectangle(),ricardo.getRectangle())){
-                        player.moveRight();
-                        return;
-                    }
+                    //if (collide(player.getRectangle(),ricardo.getRectangle())){
+                    //    player.moveRight();
+                    //    return;
+                    //}
                     player.moveLeft();
                 }
 

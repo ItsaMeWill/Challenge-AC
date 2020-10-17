@@ -6,7 +6,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class Mari extends MCS {
 
     public Mari(){
-        super(new Picture(80,80, "resources/player.png"), new Rectangle(80,80,50,50));
+        super(new Picture(330,360, "resources/rsz_1player.png"), new Rectangle(330,360,50,50));
     }
 
 }
