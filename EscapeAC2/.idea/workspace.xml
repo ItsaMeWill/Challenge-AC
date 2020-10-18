@@ -20,62 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/Clap.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/Jojo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/Mari.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/Wrong.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/bobmarley.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/gameover.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/instructionsmenu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/jojobattle1final.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/mainmenu.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move down 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move down 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move down 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move left 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move left 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move left 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move right 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move right 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move right 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move up 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move up 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/move up 3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/pedrobattle1final_.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/pedrovoice.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/ricardovoice.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/rsz_movedown1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/soundtrack.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/victory.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/weedroom.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/build.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/src/org/academiadecodigo/bootcamp/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/src/org/academiadecodigo/bootcamp/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/BreakRoom.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/CorrectAnswer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Instructions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Intro2.1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Pedrobattle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/breakRoomWFinal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/download.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/jojo_face.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/key-removebg-preview.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/mari_face.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsz_1correctanswer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsz_1cyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsz_cyan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsz_key.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Jojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Jojo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Mari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Mari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/PedroG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/PedroG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,24 +196,24 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1602801892883" />
-    <state width="1798" height="290" key="GridCell.Tab.0.bottom" timestamp="1603058870350">
+    <state width="1798" height="290" key="GridCell.Tab.0.bottom" timestamp="1603059561216">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
     <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603052033117" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1602802372772" />
-    <state width="1798" height="290" key="GridCell.Tab.0.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1603058870350" />
-    <state width="1798" height="290" key="GridCell.Tab.0.center" timestamp="1603058870349">
+    <state width="1798" height="290" key="GridCell.Tab.0.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1603059561216" />
+    <state width="1798" height="290" key="GridCell.Tab.0.center" timestamp="1603059561215">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
-    <state width="1798" height="290" key="GridCell.Tab.0.center/80.23.1840.1057@80.23.1840.1057" timestamp="1603058870349" />
-    <state width="1798" height="290" key="GridCell.Tab.0.left" timestamp="1603058870349">
+    <state width="1798" height="290" key="GridCell.Tab.0.center/80.23.1840.1057@80.23.1840.1057" timestamp="1603059561215" />
+    <state width="1798" height="290" key="GridCell.Tab.0.left" timestamp="1603059561215">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
-    <state width="1798" height="290" key="GridCell.Tab.0.left/80.23.1840.1057@80.23.1840.1057" timestamp="1603058870349" />
-    <state width="1798" height="290" key="GridCell.Tab.0.right" timestamp="1603058870350">
+    <state width="1798" height="290" key="GridCell.Tab.0.left/80.23.1840.1057@80.23.1840.1057" timestamp="1603059561215" />
+    <state width="1798" height="290" key="GridCell.Tab.0.right" timestamp="1603059561215">
       <screen x="80" y="23" width="1840" height="1057" />
     </state>
-    <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1603058870350" />
+    <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1603059561215" />
     <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603030854648" />
     <state width="1798" height="358" key="GridCell.Tab.1.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1602954373378" />
     <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603030854647">

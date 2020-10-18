@@ -62,7 +62,7 @@ public class Game {
         mariVoice = new Sound("/resources/Mari.wav");
         victorySound = new Sound("/resources/victory.wav");
         menu = new Picture(10, 10, "resources/Intro2.0.png");
-        instructions = new Picture(10, 10, "resources/instructionsmenu.png");
+        instructions = new Picture(10, 10, "resources/instructionsManual.png");
         player = new Player(420, 400);
         pedroG = new PedroG();
         mari = new Mari();
