@@ -1,6 +1,6 @@
 package org.academiadecodigo.bitjs.player;
 
-import org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Sound;
+import org.academiadecodigo.bitjs.sound.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -83,6 +83,7 @@ public class Player implements KeyboardHandler {
         if (health == 0) beers[0].delete();
         if (health == 0) {
             gameOverSound.play(true);
+
         }
 
     }

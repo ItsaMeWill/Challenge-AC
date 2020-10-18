@@ -5,7 +5,7 @@ import org.academiadecodigo.bitjs.enemy.Mari;
 import org.academiadecodigo.bitjs.enemy.PedroG;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.Room;
-import org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Sound;
+import org.academiadecodigo.bitjs.sound.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -30,11 +30,13 @@ public class Game {
     private Rectangle djSet;
     private Rectangle puffs;
     private Rectangle weed;
+    private Picture weedArrow;
     private Picture wrongAnswer = new Picture(130, 170, "resources/WRONGANSFINAL.png");
     private Picture gameOver = new Picture(10, 10, "resources/gamoverscreenfail.png");
     private Picture wonGame = new Picture(10, 10, "resources/ENDOFGAME.png");
     private Sound soundMenu;
     private Sound soundtrack;
+    private Sound bobmarley;
     private Sound wrong;
     private Sound claps;
     private Sound victorySound;
@@ -48,9 +50,11 @@ public class Game {
         init();
         player.moves();
     }
+
     public void init() {
         soundMenu = new Sound("/resources/mainmenu.wav");
         soundtrack = new Sound("/resources/soundtrack.wav");
+        bobmarley = new Sound("/resources/bobmarley.wav");
         wrong = new Sound("/resources/Wrong.wav");
         claps = new Sound("/resources/Clap.wav");
         ricardoVoice = new Sound("/resources/ricardovoice.wav");
@@ -58,9 +62,8 @@ public class Game {
         jojoVoice = new Sound("/resources/Jojo.wav");
         mariVoice = new Sound("/resources/Mari.wav");
         victorySound = new Sound("/resources/victory.wav");
-
         menu = new Picture(10, 10, "resources/Intro2.0.png");
-        instructions = new Picture(10, 10, "resources/Instructions.png");
+        instructions = new Picture(10, 10, "resources/instructionsManual.png");
         player = new Player(420, 400);
         pedroG = new PedroG();
         mari = new Mari();
@@ -71,14 +74,15 @@ public class Game {
         breakRoomObstacles = new Rectangle[2];
         pizzaRoomObstacles = new Rectangle[1];
         tables = new Rectangle(155, 220, 230, 270);
-        djSet = new Rectangle(120, 100, 90, 40);
+        djSet = new Rectangle(120, 100, 10, 10);
         macRoomObstacles[0] = ricardo.getRectangle();
         macRoomObstacles[1] = tables;
         macRoomObstacles[2] = djSet;
         puffs = new Rectangle(55, 180, 250, 300);
         relvinhaRoomObstacles[0] = puffs;
         relvinhaRoomObstacles[1] = pedroG.getRectangle();
-        weed = new Rectangle(260, 120, 150, 150);
+        weedArrow = new Picture(300, 50, "resources/red_arrow.png");
+        weed = new Rectangle(170, 50, 125, 140);
         breakRoomObstacles[0] = weed;
         breakRoomObstacles[1] = jojo.getRectangle();
     }
@@ -132,16 +136,15 @@ public class Game {
                 while (player.getCurrentAnswer() != ricardo.getCorrectAnswer()) {
                     System.out.println("");
 
-
                     switch (player.getCurrentAnswer()) {
                         case 1:
-
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
-
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
 
                         case 2:
                             if (player.deadVerifier() == false) {
@@ -150,35 +153,42 @@ public class Game {
                                 player.hasKey();
                                 ricardo.getQuizScreen().delete();
                                 wrongAnswer.delete();
+                                break;
                             }
-                            break;
+
 
                         case 3:
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
                     }
 
                     if (player.deadVerifier()) {
                         gameOver.draw();
+                        return;
                     }
                 }
 
                 break;
             }
-        } soundtrack.play(true);
+        }
+        soundtrack.play(true);
         while (true) {
             System.out.println("");
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 &&
                     player.getRectangle().getY() - player.getRectangle().getHeight() == 90) {
-                    ricardo.getRectangle().delete();
-                    ricardo.getFace().delete();
-                    startLevel2();
-                    break;
+                ricardo.getRectangle().delete();
+                ricardo.getFace().delete();
+                startLevel2();
+                break;
             }
         }
+
     }
 
     public void startLevel2() {
@@ -205,7 +215,7 @@ public class Game {
 
                 while (player.getCurrentAnswer() != mari.getCorrectAnswer()) {
                     System.out.println("");
-                    //verifyAnswer(currentAnswer);
+
 
                     switch (player.getCurrentAnswer()) {
 
@@ -216,32 +226,38 @@ public class Game {
                                 player.hasKey();
                                 mari.getQuizScreen().delete();
                                 wrongAnswer.delete();
+                                break;
                             }
-                            break;
 
                         case 2:
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
 
                         case 3:
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
                     }
 
                     if (player.deadVerifier()) {
                         gameOver.draw();
+                        return;
                     }
                 }
 
                 break;
             }
         }
+
         soundtrack.play(true);
 
         while (true) {
@@ -253,6 +269,7 @@ public class Game {
                 break;
             }
         }
+
     }
 
     public void startLevel3() {
@@ -269,15 +286,16 @@ public class Game {
 
         while (true) {
             System.out.println("");
+
             if (player.collide(player.getRectangle(), pedroG.getRectangle())) {
                 pedroG.makeQuestion();
+
                 player.setColliding(true);
                 soundtrack.stop();
                 pedroVoice.play(true);
 
                 while (player.getCurrentAnswer() != pedroG.getCorrectAnswer()) {
                     System.out.println("");
-                    //verifyAnswer(currentAnswer);
 
                     switch (player.getCurrentAnswer()) {
                         case 1:
@@ -291,20 +309,27 @@ public class Game {
                             break;
 
                         case 2:
-
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
 
                         case 3:
 
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
+                    }
+                    if (player.deadVerifier()) {
+                        gameOver.draw();
+                        return;
                     }
 
                 }
@@ -316,6 +341,7 @@ public class Game {
         soundtrack.play(true);
         while (true) {
             System.out.println("");
+
             if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 &&
                     player.getRectangle().getY() - player.getRectangle().getHeight() == 300) {
                 pedroG.getRectangle().delete();
@@ -329,15 +355,14 @@ public class Game {
     public void startLevel4() {
         player.setCurrentAnswer(0);
         player.setCurrentRoom(4);
-        breakRoom = new Room(new Picture(10, 10, "resources/breakRoomWFinal.png"));
+        breakRoom = new Room(new Picture(10, 10, "resources/weedroom.png"));
         breakRoom.getPicture().draw();
         player.createBeers(player.getHealth());
-        player.hasKey();
         player.updatePosition(-400, -280);
         player.refresh(3);
         jojo = new Jojo();
         jojo.getFace().draw();
-        weed.draw();
+
 
         while (true) {
             System.out.println("");
@@ -355,33 +380,40 @@ public class Game {
                     switch (player.getCurrentAnswer()) {
 
                         case 1:
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
 
                         case 2:
-                            wrong.play(true);
-                            player.beerToHealth();
-                            player.setCurrentAnswer(0);
-                            wrongAnswer.draw();
-                            break;
+                            if (player.deadVerifier() == false) {
+                                wrong.play(true);
+                                player.beerToHealth();
+                                player.setCurrentAnswer(0);
+                                wrongAnswer.draw();
+                                break;
+                            }
 
                         case 3:
                             if (player.deadVerifier() == false) {
                                 claps.play(true);
                                 player.setColliding(false);
                                 player.hasKey();
+                                weedArrow.draw();
                                 jojo.getQuizScreen().delete();
                                 wrongAnswer.delete();
-                            }
-                            break;
 
+                                break;
+                            }
                     }
 
                     if (player.deadVerifier()) {
                         gameOver.draw();
+                        return;
                     }
                 }
 
@@ -389,23 +421,36 @@ public class Game {
             }
         }
 
-            //TODO exit at the last door
-            while (true) {
-                    if (player.collide(player.getRectangle(), weed)) {
-                        player.cannabisOn();
-                }
-                System.out.println("");
-                if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 200) {
-                    jojo.getRectangle().delete();
-                    player.setColliding(true);
-                    wonGame.draw();
-                    break;
-                }
-            }
         soundtrack.play(true);
-        wonGame.draw();
-        victorySound.play(true);
-        soundtrack.stop();
-        return;
+
+        while (true) {
+
+            System.out.println("");
+            if (player.collide(player.getRectangle(), weed)) {
+                weedArrow.delete();
+                soundtrack.close();
+                bobmarley.play(true);
+                player.cannabisOn();
+                break;
+            }
         }
+
+        while (true) {
+            System.out.println("");
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() == 360 && player.getIsHigh()) {
+                jojo.getRectangle().delete();
+                wonGame.draw();
+                break;
+            }
+        }
+        if (!player.deadVerifier()) {
+            player.setColliding(true);
+            bobmarley.close();
+            wonGame.draw();
+            victorySound.play(true);
+            return;
+        }
+
+
     }
+}
