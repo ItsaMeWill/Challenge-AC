@@ -115,7 +115,7 @@ public class Game {
         player.setColliding(false);
         player.createBeers(player.getHealth());
         player.setCurrentRoom(1);
-        player.getFace(0).draw();
+        player.getFace(1).draw();
         ricardo.getFace().draw();
         soundtrack.play(true);
 
@@ -391,7 +391,6 @@ public class Game {
 
             //TODO exit at the last door
             while (true) {
-                System.out.println("teste");
                     if (player.collide(player.getRectangle(), weed)) {
                         player.cannabisOn();
                 }
