@@ -1,6 +1,5 @@
 package org.academiadecodigo.bitjs.enemy;
 
-import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
@@ -9,6 +8,7 @@ public class Ricardo extends MCS {
 
     private Question question;
     private int correctAnswer;
+
 
     private Rectangle rectangle;
 
@@ -21,7 +21,9 @@ public class Ricardo extends MCS {
         }
 
 
+
     public void makeQuestion() {
+
         super.makeQuestion((new Picture(10,10,"resources/9TEENBATTLE500.png")));
     }
 

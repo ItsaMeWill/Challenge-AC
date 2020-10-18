@@ -1,6 +1,8 @@
 package org.academiadecodigo.bitjs.enemy;
 
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
+import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Jojo extends MCS {
@@ -10,9 +12,10 @@ public class Jojo extends MCS {
         this.correctAnswer = 3;
     }
     public void makeQuestion() {
-        super.makeQuestion((new Picture(10,10,"resources/JojoBattle500.png")));
+        super.makeQuestion((new Picture(10,10,"resources/jojobattle1final.png")));
     }
     public int getCorrectAnswer() {
         return correctAnswer;
     }
 }
+

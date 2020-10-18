@@ -1,5 +1,6 @@
 package org.academiadecodigo.bitjs.player;
 
+import org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
@@ -9,6 +10,8 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 public class Player implements KeyboardHandler {
 
+    private boolean menu = true;
+    private boolean startGame = true;
     private boolean hasKey;
     private Picture key;
     private Picture face;
@@ -18,6 +21,9 @@ public class Player implements KeyboardHandler {
     private int currentAnswer = 0;
     private int currentRoom;
     private int currentMove;
+    private KeyboardEvent space = new KeyboardEvent();
+    private KeyboardEvent start = new KeyboardEvent();
+    private KeyboardEvent exit = new KeyboardEvent();
     private KeyboardEvent left = new KeyboardEvent();
     private KeyboardEvent right = new KeyboardEvent();
     private KeyboardEvent down = new KeyboardEvent();
@@ -25,45 +31,48 @@ public class Player implements KeyboardHandler {
     private KeyboardEvent one = new KeyboardEvent();
     private KeyboardEvent two = new KeyboardEvent();
     private KeyboardEvent three = new KeyboardEvent();
+    private Sound gameOverSound = new Sound("/resources/gameover.wav");
 
     public Player(int x, int y) {
         this.face = new Picture(x, y, "resources/rsz_1cyan.png");
         this.rectangle = new Rectangle(x, y, 50, 50);
+
     }
 
+    public void createBeers(int health) {
+        beers[0] = new Picture(40, 460, "resources/Beer.png");
+        beers[1] = new Picture(90, 460, "resources/Beer.png");
+        beers[2] = new Picture(140, 460, "resources/Beer.png");
 
-    public void createBeers(int health){
-        beers[0] = new Picture(40,460,"resources/Beer.png");
-        beers[1] = new Picture(90,460,"resources/Beer.png");
-        beers[2] = new Picture(140,460,"resources/Beer.png");
-
-        for (int i = 0; i < health; i++){
+        for (int i = 0; i < health; i++) {
 
             beers[i].draw();
         }
     }
 
-    public void lostKey(){
+    public void lostKey() {
         this.hasKey = false;
         this.key.delete();
     }
 
-    public void hasKey(){
-        this.hasKey = true;
-        this.key = new Picture(440,440, "resources/key.png");
-        this.key.draw();
+    public void hasKey() {
 
-
+        if (deadVerifier() == false) {
+            this.hasKey = true;
+            this.key = new Picture(440, 440, "resources/key.png");
+            this.key.draw();
+        }
     }
 
-    public void beerToHealth(){
+    public void beerToHealth() {
         this.health--;
         if (health == 2) beers[2].delete();
         if (health == 1) beers[1].delete();
         if (health == 0) beers[0].delete();
-        if (health == 0){
+        if (health == 0) {
 
-            //call gameover screen
+            gameOverSound.play(true);
+
         }
 
     }
@@ -86,33 +95,35 @@ public class Player implements KeyboardHandler {
 
     }
 
-    public void moveLeft(){
+    public void moveLeft() {
         this.face.translate(-10, 0);
         this.rectangle.translate(-10, 0);
 
     }
 
 
-
-
-
-    public void refresh(){
-         face.delete();
-         rectangle.delete();
-         face.draw();
-         rectangle.draw();
+    public void refresh() {
+        face.delete();
+        rectangle.delete();
+        face.draw();
+        rectangle.draw();
     }
 
-        public Picture getFace () {
-            return this.face;
-        }
+    public Picture getFace() {
+        return this.face;
+    }
 
-        public Rectangle getRectangle () {
-            return rectangle;
-        }
+    public Rectangle getRectangle() {
+        return rectangle;
+    }
 
     public int getCurrentAnswer() {
         return currentAnswer;
+    }
+
+    public void setCurrentAnswer(int currentAnswer) {
+        this.currentAnswer = currentAnswer;
+
     }
 
     public int getCurrentMove() {
@@ -123,16 +134,23 @@ public class Player implements KeyboardHandler {
         return health;
     }
 
-    public void setCurrentAnswer(int currentAnswer){
-        this.currentAnswer = currentAnswer;
-
-    }
-
     public void setCurrentRoom(int currentRoom) {
         this.currentRoom = currentRoom;
     }
 
     public void selectedAnswers(KeyboardEvent keyboardEvent) {
+
+        if(keyboardEvent == space) {
+
+            this.menu = false;
+
+        }
+
+        if (keyboardEvent == start){
+
+            this.startGame = false ;
+
+        }
 
         if (keyboardEvent == one) {
 
@@ -153,6 +171,7 @@ public class Player implements KeyboardHandler {
         }
 
     }
+
     public void collisionDetector(Rectangle[] obstacles) {
         for (int i = 0; i < obstacles.length; i++) {
             if (collide(rectangle, obstacles[i])) {
@@ -174,6 +193,7 @@ public class Player implements KeyboardHandler {
         }
 
     }
+
     public void moving(KeyboardEvent keyboardEvent) {
 
         switch (currentRoom) {
@@ -193,7 +213,7 @@ public class Player implements KeyboardHandler {
         }
 
 
-        if (keyboardEvent == down &&  rectangle.getY() < 435) {
+        if (keyboardEvent == down && rectangle.getY() < 435) {
             moveDown();
             currentMove = 0;
         }
@@ -216,6 +236,18 @@ public class Player implements KeyboardHandler {
     public void moves() {
 
         Keyboard keyboard = new Keyboard(this);
+
+        space.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        space.setKey(KeyboardEvent.KEY_SPACE);
+        keyboard.addEventListener(space);
+
+        start.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        start.setKey(KeyboardEvent.KEY_C);
+        keyboard.addEventListener(start);
+
+        exit.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        exit.setKey(KeyboardEvent.KEY_E);
+        keyboard.addEventListener(exit);
 
         one.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         one.setKey(KeyboardEvent.KEY_1);
@@ -246,6 +278,7 @@ public class Player implements KeyboardHandler {
         keyboard.addEventListener(left);
 
     }
+
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
         moving(keyboardEvent);
@@ -255,6 +288,7 @@ public class Player implements KeyboardHandler {
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
     }
+
     public boolean collide(Rectangle r1, Rectangle r2) {
 
         if (r1.getX() > r2.getX() + r2.getWidth() || r1.getX() + r1.getWidth() < r2.getX() ||
@@ -263,11 +297,21 @@ public class Player implements KeyboardHandler {
         }
         return true;
     }
+
     public boolean deadVerifier() {
         if (health == 0) {
             return true;
         }
         return false;
+    }
+
+
+    public boolean isMenu() {
+        return menu;
+    }
+
+    public boolean isStartGame() {
+        return startGame;
     }
 }
 
