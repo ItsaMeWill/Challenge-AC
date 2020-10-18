@@ -3,9 +3,11 @@ package org.academiadecodigo.bitjs.enemy;
 public enum Question {
 
 
+
     QUESTION1(" Quantos tipos de variáveis existem em JAVA? ", "1) 3 tipos. Int, Boolean, String. ",
             "2) 2 tipos. Referência e primitivos","3) Infinitos"),
     QUESTION2(" O que é a JVM ? ", "", "asdas","asda");
+
 
 
     private String question;

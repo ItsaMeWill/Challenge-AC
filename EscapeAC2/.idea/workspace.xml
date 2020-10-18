@@ -20,25 +20,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="91e850fe-d209-455a-9ced-f163bbe8b268" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/Intro2.0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/breakRoomWFinal.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Clap.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Intro2.1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Jojo.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Mari.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/Wrong.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/bobmarley.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/gameover.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/instructionsmenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/jojobattle1final.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/mainmenu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/pedrobattle1final_.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/pedrovoice.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/ricardovoice.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/soundtrack.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/victory.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/build.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/src/org/academiadecodigo/bootcamp/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/sound/src/org/academiadecodigo/bootcamp/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/maribattle_txt.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/9TEENBATTLE.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Intro.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Relvinha Room.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/pedro_face.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/rsz_pedrobattle (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Game Instructions.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Instructions.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Pedrobattle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/movedown1-removebg-preview 1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move down 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/movedown2-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move down 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/movedown3-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move down 3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveleft1-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move left 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveleft2-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move left 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveleft3_copy-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move left 3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveright1-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move right 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveright2-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move right 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveright3-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move right 3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveup1-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move up 1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveup2-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move up 2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/moveup3-removebg-preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/move up 3.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Jojo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Jojo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/MCS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Mari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Mari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/PedroG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/PedroG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Question.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/enemy/Ricardo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/player/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/BreakRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/MacRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/PizzaRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/RelvinhaRoom.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/org/academiadecodigo/bitjs/rooms/VictoryRoom.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +102,26 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources" />
+      <recent name="$PROJECT_DIR$/src/org/academiadecodigo/bitjs" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Main" />
+      <module name="EscapeAC" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.academiadecodigo.bitjs.Main" />
       <module name="EscapeAC" />
@@ -107,6 +149,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -147,6 +190,8 @@
       <workItem from="1603037359411" duration="303000" />
       <workItem from="1603038051275" duration="136000" />
       <workItem from="1603038211145" duration="5055000" />
+      <workItem from="1603034329527" duration="3915000" />
+      <workItem from="1603038781305" duration="1948000" />
     </task>
     <servers />
   </component>
@@ -191,49 +236,49 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="776" y="310" width="424" height="484" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1602801892883" />
-    <state width="1878" height="264" key="GridCell.Tab.0.bottom" timestamp="1603043071189">
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom" timestamp="1603051806996">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603043071189" />
+    <state width="1878" height="264" key="GridCell.Tab.0.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603051806996" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1602802372772" />
     <state width="1798" height="290" key="GridCell.Tab.0.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1603031405228" />
-    <state width="1878" height="264" key="GridCell.Tab.0.center" timestamp="1603043071188">
+    <state width="1878" height="264" key="GridCell.Tab.0.center" timestamp="1603051806996">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603043071188" />
+    <state width="1878" height="264" key="GridCell.Tab.0.center/0.23.1920.977@0.23.1920.977" timestamp="1603051806996" />
     <state width="1807" height="278" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1602802372771" />
     <state width="1798" height="290" key="GridCell.Tab.0.center/80.23.1840.1057@80.23.1840.1057" timestamp="1603031405227" />
-    <state width="1878" height="264" key="GridCell.Tab.0.left" timestamp="1603043071188">
+    <state width="1878" height="264" key="GridCell.Tab.0.left" timestamp="1603051806995">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603043071188" />
+    <state width="1878" height="264" key="GridCell.Tab.0.left/0.23.1920.977@0.23.1920.977" timestamp="1603051806995" />
     <state width="1807" height="278" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1602802372770" />
     <state width="1798" height="290" key="GridCell.Tab.0.left/80.23.1840.1057@80.23.1840.1057" timestamp="1603031405227" />
-    <state width="1878" height="264" key="GridCell.Tab.0.right" timestamp="1603043071189">
+    <state width="1878" height="264" key="GridCell.Tab.0.right" timestamp="1603051806996">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603043071189" />
+    <state width="1878" height="264" key="GridCell.Tab.0.right/0.23.1920.977@0.23.1920.977" timestamp="1603051806996" />
     <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1602802372771" />
     <state width="1798" height="290" key="GridCell.Tab.0.right/80.23.1840.1057@80.23.1840.1057" timestamp="1603031405227" />
     <state width="1878" height="326" key="GridCell.Tab.1.bottom" timestamp="1603041892738">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603041892738" />
+    <state width="1878" height="326" key="GridCell.Tab.1.bottom/0.23.1920.977@0.23.1920.977" timestamp="1603030854648" />
     <state width="1798" height="358" key="GridCell.Tab.1.bottom/80.23.1840.1057@80.23.1840.1057" timestamp="1602954373378" />
-    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603041892735">
+    <state width="1878" height="326" key="GridCell.Tab.1.center" timestamp="1603030854647">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603041892735" />
+    <state width="1878" height="326" key="GridCell.Tab.1.center/0.23.1920.977@0.23.1920.977" timestamp="1603030854647" />
     <state width="1798" height="358" key="GridCell.Tab.1.center/80.23.1840.1057@80.23.1840.1057" timestamp="1602954373378" />
-    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603041892734">
+    <state width="1878" height="326" key="GridCell.Tab.1.left" timestamp="1603030854643">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603041892734" />
+    <state width="1878" height="326" key="GridCell.Tab.1.left/0.23.1920.977@0.23.1920.977" timestamp="1603030854643" />
     <state width="1798" height="358" key="GridCell.Tab.1.left/80.23.1840.1057@80.23.1840.1057" timestamp="1602954373377" />
-    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603041892735">
+    <state width="1878" height="326" key="GridCell.Tab.1.right" timestamp="1603030854648">
       <screen x="0" y="23" width="1920" height="977" />
     </state>
-    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603041892735" />
+    <state width="1878" height="326" key="GridCell.Tab.1.right/0.23.1920.977@0.23.1920.977" timestamp="1603030854648" />
     <state width="1798" height="358" key="GridCell.Tab.1.right/80.23.1840.1057@80.23.1840.1057" timestamp="1602954373378" />
     <state x="461" y="150" key="SettingsEditor" timestamp="1603038132965">
       <screen x="0" y="23" width="1920" height="977" />

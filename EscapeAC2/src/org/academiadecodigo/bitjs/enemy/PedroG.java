@@ -10,7 +10,7 @@ private int correctAnswer;
         correctAnswer = 1;
     }
     public void makeQuestion() {
-        super.makeQuestion((new Picture(10,10,"resources/pedroBattle500.png")));
+        super.makeQuestion((new Picture(10,10,"resources/pedrobattle1final_.png")));
     }
 
     public int getCorrectAnswer() {
