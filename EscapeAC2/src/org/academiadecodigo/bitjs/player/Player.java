@@ -14,13 +14,21 @@ public class Player implements KeyboardHandler {
     private boolean startGame = true;
     private boolean hasKey;
     private Picture key;
-    private Picture face;
+    private Picture[] face = new Picture[12];
     private Picture[] beers = new Picture[3];
     private Rectangle rectangle;
     private int health = 3;
+    private int moveCounter;
+    private int moveSet;
+    private boolean isHigh = false;
+    private boolean isColliding = false;
     private int currentAnswer = 0;
     private int currentRoom;
     private int currentMove;
+    private int movingLeft = 6;
+    private int movingRight = 9;
+    private int movingDown = 0;
+    private int movingUp = 3;
     private KeyboardEvent space = new KeyboardEvent();
     private KeyboardEvent start = new KeyboardEvent();
     private KeyboardEvent exit = new KeyboardEvent();
@@ -34,9 +42,20 @@ public class Player implements KeyboardHandler {
     private Sound gameOverSound = new Sound("/resources/gameover.wav");
 
     public Player(int x, int y) {
-        this.face = new Picture(x, y, "resources/rsz_1cyan.png");
-        this.rectangle = new Rectangle(x, y, 50, 50);
+        this.face[0] = new Picture(x, y, "resources/move down 1.png");
+        this.face[1] = new Picture(x, y, "resources/move down 2.png");
+        this.face[2] = new Picture(x, y, "resources/move down 3.png");
+        this.face[3] = new Picture(x, y, "resources/move up 1.png");
+        this.face[4] = new Picture(x, y, "resources/move up 2.png");
+        this.face[5] = new Picture(x, y, "resources/move up 3.png");
+        this.face[6] = new Picture(x, y, "resources/move left 1.png");
+        this.face[7] = new Picture(x, y, "resources/move left 2.png");
+        this.face[8] = new Picture(x, y, "resources/move left 3.png");
+        this.face[9] = new Picture(x, y, "resources/move right 1.png");
+        this.face[10] = new Picture(x, y, "resources/move right 2.png");
+        this.face[11] = new Picture(x, y, "resources/move right 3.png");
 
+        this.rectangle = new Rectangle(x, y, 50, 50);
     }
 
     public void createBeers(int health) {
@@ -45,18 +64,11 @@ public class Player implements KeyboardHandler {
         beers[2] = new Picture(140, 460, "resources/Beer.png");
 
         for (int i = 0; i < health; i++) {
-
             beers[i].draw();
         }
     }
 
-    public void lostKey() {
-        this.hasKey = false;
-        this.key.delete();
-    }
-
     public void hasKey() {
-
         if (deadVerifier() == false) {
             this.hasKey = true;
             this.key = new Picture(440, 440, "resources/key.png");
@@ -70,7 +82,6 @@ public class Player implements KeyboardHandler {
         if (health == 1) beers[1].delete();
         if (health == 0) beers[0].delete();
         if (health == 0) {
-
             gameOverSound.play(true);
 
         }
@@ -78,40 +89,115 @@ public class Player implements KeyboardHandler {
     }
 
     public void moveUp() {
-        this.face.translate(0, -10);
-        this.rectangle.translate(0, -10);
-
+        if(isHigh){
+            this.moveCounter += 1;
+        }
+        if (moveCounter == 5) {
+            setMoveCounter(0);
+            randomMov();
+        }
+        if (!isColliding) {
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(0, -10);
+                this.face[i].delete();
+            }
+            this.face[this.movingUp].draw();
+            this.movingUp += 1;
+            if ( this.movingUp > 5){
+                this.movingUp = 3;
+            }
+            this.rectangle.translate(0, -10);
+        }
     }
 
     public void moveDown() {
-        this.face.translate(0, 10);
-        this.rectangle.translate(0, 10);
-
+        if(isHigh){
+            this.moveCounter += 1;
+        }
+        if (moveCounter == 5) {
+            setMoveCounter(0);
+            randomMov();
+        }
+        if (!isColliding) {
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(0, 10);
+                this.face[i].delete();
+            }
+            this.face[this.movingDown].draw();
+            this.movingDown += 1;
+            if ( this.movingDown > 2){
+                this.movingDown = 0;
+            }
+            this.rectangle.translate(0, 10);
+        }
     }
 
     public void moveRight() {
-        this.face.translate(10, 0);
-        this.rectangle.translate(10, 0);
+        if(isHigh){
+            this.moveCounter += 1;
+        }
+        if (moveCounter == 5) {
+            setMoveCounter(0);
+            randomMov();
+        }
+        if (!isColliding) {
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(10, 0);
+                this.face[i].delete();
+            }
+            this.face[this.movingRight].draw();
+            this.movingRight += 1;
+            if ( this.movingRight > 11){
+                this.movingRight = 9;
+            }
+            this.rectangle.translate(10, 0);
+        }
 
     }
 
     public void moveLeft() {
-        this.face.translate(-10, 0);
-        this.rectangle.translate(-10, 0);
-
+        if(isHigh){
+            this.moveCounter += 1;
+        }
+        if (moveCounter == 5) {
+            setMoveCounter(0);
+            randomMov();
+        }
+        if (!isColliding) {
+            for (int i = 0; i < face.length; i++) {
+                this.face[i].translate(-10, 0);
+                this.face[i].delete();
+            }
+            this.face[this.movingLeft].draw();
+            this.movingLeft += 1;
+            if ( this.movingLeft > 8){
+                this.movingLeft = 6;
+            }
+            this.rectangle.translate(-10, 0);
+        }
     }
 
-
-    public void refresh() {
-        face.delete();
-        rectangle.delete();
-        face.draw();
-        rectangle.draw();
+    public void refresh(int lastDirection){
+        for (int i = 0; i < face.length; i++){
+            face[i].delete();
+        }
+        face[lastDirection].draw();
     }
 
-    public Picture getFace() {
-        return this.face;
+    public void cannabisOn() {
+        this.isHigh = true;
     }
+
+    public boolean getIsHigh() {
+        return this.isHigh;
+    }
+
+    public void updatePosition(double x, double y) {
+        for (int i = 0; i < face.length; i++) {
+            face[i].translate(x, y);
+        }
+        rectangle.translate(x,y);
+  }
 
     public Rectangle getRectangle() {
         return rectangle;
@@ -121,17 +207,45 @@ public class Player implements KeyboardHandler {
         return currentAnswer;
     }
 
-    public void setCurrentAnswer(int currentAnswer) {
-        this.currentAnswer = currentAnswer;
-
-    }
-
     public int getCurrentMove() {
         return currentMove;
     }
 
     public int getHealth() {
         return health;
+    }
+
+    public int getMoveCounter() {
+        return this.moveCounter;
+    }
+
+    public int getMoveSet() {
+        return this.moveSet;
+    }
+
+    public Picture getFace(int direction) {
+        return this.face[direction];
+    }
+
+    public boolean isColliding() {
+        return isColliding;
+    }
+
+    public void setColliding(boolean colliding) {
+        isColliding = colliding;
+    }
+
+    public void setMoveSet(int moveSet) {
+        this.moveSet = moveSet;
+    }
+
+    public void setMoveCounter(int num) {
+        this.moveCounter = num;
+    }
+
+    public void setCurrentAnswer(int currentAnswer) {
+        this.currentAnswer = currentAnswer;
+
     }
 
     public void setCurrentRoom(int currentRoom) {
@@ -214,24 +328,27 @@ public class Player implements KeyboardHandler {
 
 
         if (keyboardEvent == down && rectangle.getY() < 435) {
-            moveDown();
-            currentMove = 0;
+                moveDown();
+                currentMove = 0;
         }
+
         if (keyboardEvent == up && rectangle.getY() > 30) {
-            moveUp();
-            currentMove = 1;
+                moveUp();
+                currentMove = 1;
         }
+
         if (keyboardEvent == right && rectangle.getX() < 435) {
-            moveRight();
-            currentMove = 2;
+                moveRight();
+                currentMove = 2;
         }
+
         if (keyboardEvent == left && rectangle.getX() > 30) {
-            moveLeft();
-            currentMove = 3;
+                moveLeft();
+                currentMove = 3;
+            }
         }
 
 
-    }
 
     public void moves() {
 
@@ -285,18 +402,44 @@ public class Player implements KeyboardHandler {
         selectedAnswers(keyboardEvent);
     }
 
-    @Override
-    public void keyReleased(KeyboardEvent keyboardEvent) {
-    }
-
-    public boolean collide(Rectangle r1, Rectangle r2) {
-
-        if (r1.getX() > r2.getX() + r2.getWidth() || r1.getX() + r1.getWidth() < r2.getX() ||
-                r1.getY() > r2.getY() + r2.getHeight() || r1.getY() + r1.getHeight() < r2.getY()) {
-            return false;
+    public void randomMov() {
+        switch (this.getMoveSet()) {
+            case 0:
+                left.setKey(39);
+                right.setKey(37);
+                up.setKey(40);
+                down.setKey(38);
+                this.setMoveSet(1);
+                break;
+            case 1:
+                left.setKey(38);
+                right.setKey(40);
+                up.setKey(39);
+                down.setKey(37);
+                this.setMoveSet(2);
+                break;
+            case 2:
+                left.setKey(40);
+                right.setKey(38);
+                up.setKey(37);
+                down.setKey(39);
+                this.setMoveSet(0);
+                break;
         }
-        return true;
     }
+
+        @Override
+        public void keyReleased (KeyboardEvent keyboardEvent){
+        }
+
+        public boolean collide (Rectangle r1, Rectangle r2){
+
+            if (r1.getX() > r2.getX() + r2.getWidth() || r1.getX() + r1.getWidth() < r2.getX() ||
+                    r1.getY() > r2.getY() + r2.getHeight() || r1.getY() + r1.getHeight() < r2.getY()) {
+                return false;
+            }
+            return true;
+        }
 
     public boolean deadVerifier() {
         if (health == 0) {
@@ -314,6 +457,3 @@ public class Player implements KeyboardHandler {
         return startGame;
     }
 }
-
-
-
