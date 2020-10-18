@@ -5,7 +5,7 @@ import org.academiadecodigo.bitjs.enemy.Mari;
 import org.academiadecodigo.bitjs.enemy.PedroG;
 import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.rooms.Room;
-import org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp.Sound;
+import org.academiadecodigo.bitjs.sound.Sound;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
@@ -440,7 +440,7 @@ if(!player.deadVerifier()){
         soundtrack.play(true);
         while (true) {
             System.out.println("");
-            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 200) {
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() == 370) {
                 jojo.getRectangle().delete();
                 wonGame.draw();
                 break;

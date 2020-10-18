@@ -1,4 +1,4 @@
-package org.academiadecodigo.bitjs.sound.src.org.academiadecodigo.bootcamp;
+package org.academiadecodigo.bitjs.sound;
 
 import javax.sound.sampled.*;
 import java.io.File;
