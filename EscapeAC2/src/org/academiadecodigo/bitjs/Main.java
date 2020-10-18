@@ -1,13 +1,6 @@
 package org.academiadecodigo.bitjs;
 
-import org.academiadecodigo.bitjs.enemy.Question;
-import org.academiadecodigo.bitjs.enemy.Ricardo;
 import org.academiadecodigo.bitjs.player.Game;
-import org.academiadecodigo.bitjs.rooms.MacRoom;
-import org.academiadecodigo.bitjs.player.Player;
-import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-import org.academiadecodigo.simplegraphics.graphics.Text;
 
 public class Main {
 
