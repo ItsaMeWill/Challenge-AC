@@ -334,27 +334,7 @@ public class Game {
 
 
 
-    public void collisionDetector(Rectangle[] obstacles) {
-        for (int i = 0; i < obstacles.length; i++) {
-            if (player.collide(player.getRectangle(), obstacles[i])) {
-                switch (player.getCurrentMove()) {
-                    case 0:
-                        player.moveUp();
-                        break;
-                    case 1:
-                        player.moveDown();
-                        break;
-                    case 2:
-                        player.moveLeft();
-                        break;
-                    case 3:
-                        player.moveRight();
-                        break;
-                }
-            }
-        }
 
-    }
 
 
 
