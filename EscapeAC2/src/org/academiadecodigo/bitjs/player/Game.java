@@ -30,6 +30,7 @@ public class Game {
     private Rectangle djSet;
     private Rectangle puffs;
     private Rectangle weed;
+    private Picture weedArrow;
     private Picture wrongAnswer = new Picture(130, 170, "resources/WRONGANSFINAL.png");
     private Picture gameOver = new Picture(10, 10, "resources/gamoverscreenfail.png");
     private Picture wonGame = new Picture(10, 10, "resources/ENDOFGAME.png");
@@ -80,6 +81,7 @@ public class Game {
         puffs = new Rectangle(55, 180, 250, 300);
         relvinhaRoomObstacles[0] = puffs;
         relvinhaRoomObstacles[1] = pedroG.getRectangle();
+        weedArrow = new Picture(300, 50, "resources/red_arrow.png");
         weed = new Rectangle(170, 50, 125, 140);
         breakRoomObstacles[0] = weed;
         breakRoomObstacles[1] = jojo.getRectangle();
@@ -401,6 +403,7 @@ public class Game {
                                 claps.play(true);
                                 player.setColliding(false);
                                 player.hasKey();
+                                weedArrow.draw();
                                 jojo.getQuizScreen().delete();
                                 wrongAnswer.delete();
 
@@ -424,6 +427,7 @@ public class Game {
 
             System.out.println("");
             if (player.collide(player.getRectangle(), weed)) {
+                weedArrow.delete();
                 soundtrack.close();
                 bobmarley.play(true);
                 player.cannabisOn();
