@@ -219,13 +219,13 @@ public class Game {
         while (true) {
             System.out.println("");
             System.out.println(player.getRectangle().getX() + player.getRectangle().getWidth());
+
             if (player.collide(player.getRectangle(), pedroG.getRectangle())) {
                 pedroG.makeQuestion();
-                pedroG.getQuizScreen();
+
 
                 while (player.getCurrentAnswer() != pedroG.getCorrectAnswer()) {
                     System.out.println("");
-                    //verifyAnswer(currentAnswer);
 
                     switch (player.getCurrentAnswer()) {
                         case 1:
@@ -254,7 +254,7 @@ public class Game {
         }
         while (true) {
             System.out.println("");
-            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 300) {
+            if (player.getRectangle().getX() + player.getRectangle().getWidth() == 490 && player.getRectangle().getY() - player.getRectangle().getHeight() == 350) {
                 pedroG.getRectangle().delete();
                 pedroG.getFace().delete();
                 relvinhaRoom.getPicture().delete();
@@ -270,7 +270,7 @@ public class Game {
     public void startLevel4() {
        player.setCurrentAnswer(0);
         player.setCurrentRoom(4);
-        breakRoom = new Room( new Picture(10, 10, "resources/BreakRoom.png"));
+        breakRoom = new Room( new Picture(10, 10, "resources/breakRoomWFinal.png"));
         breakRoom.getPicture().draw();
         player.createBeers(player.getHealth());
         player.getFace().translate(-400, -280);
