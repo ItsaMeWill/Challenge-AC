@@ -1,9 +1,7 @@
 package org.academiadecodigo.bitjs.enemy;
 
-import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
-import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 abstract public class MCS {
@@ -14,7 +12,7 @@ abstract public class MCS {
     private int correctAnswer;
 
 
-    public MCS(Picture face, Rectangle rectangle){
+    public MCS(Picture face, Rectangle rectangle) {
         this.face = face;
         this.rectangle = rectangle;
 
@@ -27,9 +25,9 @@ abstract public class MCS {
 
 }
 
-        public Picture getQuizScreen(){
+    public Picture getQuizScreen() {
         return this.quizScreen;
-}
+    }
 
     public Picture getFace() {
         return face;
@@ -38,8 +36,6 @@ abstract public class MCS {
     public Rectangle getRectangle() {
         return rectangle;
     }
-
-
 
 
 }

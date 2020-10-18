@@ -24,6 +24,10 @@ public class Room{
         this.picture.draw();
     }
 
+    public Rectangle getField(){
+        return this.field;
+    }
+
     public Picture getPicture() {
         return picture;
     }
